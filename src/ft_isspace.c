@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbrassar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:09:53 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/20 12:49:06 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/05/20 12:45:48 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/05/20 12:48:47 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stddef.h>
+#include "libft.h"
 
-int		ft_isspace(int c);
-
-size_t	ft_strlen(char const *s);
-
-#endif
+int	ft_isspace(int c)
+{
+	return (c == ' ' || (c >= '\t' && c <= '\r'));
+}

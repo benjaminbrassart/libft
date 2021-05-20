@@ -6,13 +6,14 @@
 #    By: bbrassar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 11:38:19 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/20 12:34:44 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/20 12:45:45 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= libft.a
 
 SRCS				= $(addprefix ft_, $(addsuffix .c, \
+					  	isspace \
 					  	strlen \
 					  ))
 
