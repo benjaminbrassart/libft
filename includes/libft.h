@@ -6,7 +6,7 @@
 /*   By: bbrassar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:09:53 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/20 14:30:49 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/20 14:35:02 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ int		ft_isdigit(int c);
 int		ft_isspace(int c);
 
 size_t	ft_strlen(char const *s);
+
+int		ft_toupper(int c);
 
 #endif
