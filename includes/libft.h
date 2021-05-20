@@ -6,7 +6,7 @@
 /*   By: bbrassar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:09:53 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/20 14:26:58 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/20 14:30:49 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 # define LIBFT_H
 # include <stddef.h>
 
+int		ft_atoi(char const *s);
+
 int		ft_isalnum(int c);
 
 int		ft_isalpha(int c);
+
+int		ft_isascii(int c);
 
 int		ft_isdigit(int c);
 
