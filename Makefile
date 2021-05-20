@@ -3,51 +3,56 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bbrassar <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/05/20 11:38:19 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/20 12:45:45 by bbrassar         ###   ########.fr        #
+#    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
+#    Updated: 2021/05/20 14:17:36 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= libft.a
 
-SRCS				= $(addprefix ft_, $(addsuffix .c, \
-					  	isspace \
-					  	strlen \
-					  ))
+NAME_SO				= libft.so
 
-OBJS				= $(SRCS:.c=.o)
-
-DIR_SRCS			= src
-
-DIR_OBJS			= obj
-
-CC					= gcc
+CC					= clang
 
 CFLAGS				= -Wall -Wextra -Werror
 
-all:				$(NAME)
+DIR_OBJS			= obj
+
+DIR_SRCS			= src
+
+DIR_INCLUDES		= includes
+
+SRCS				= $(addprefix ft_, $(addsuffix .c, \
+						isdigit \
+						isspace \
+						strlen \
+					  ))
+
+OBJS				= $(addprefix $(DIR_OBJS)/, $(SRCS:.c=.o))
 
 $(DIR_OBJS):
-					mkdir -p $@
+					mkdir -p $(DIR_OBJS)
 
 $(DIR_OBJS)/%.o:	$(DIR_SRCS)/%.c $(DIR_OBJS)
-					$(CC) $(CFLAGS) -I . -c $< -o $@
+					$(CC) $(CFLAGS) -I includes -c $< -o $@
 
-$(NAME):			$(DIR_OBJS)/$(OBJS)
+all:				$(NAME)
+
+$(NAME):			$(OBJS)
 					ar rc $@ $^
 					ranlib $@
+
+$(NAME_SO):			$(OBJS)
+					$(CC) $(CFLAGS) -fPIC -shared $^ -o $@
 
 clean:
 					rm -rf $(DIR_OBJS)
 
 fclean:				clean
-					rm -f $(NAME)
+					rm -f $(NAME) $(NAME_SO)
 
 re:					fclean all
-
-so:					$(DIR_OBJS)/$(OBJS)
-					$(CC) -shared -o libft.so $^
 
 .PHONY:				all clean fclean re
