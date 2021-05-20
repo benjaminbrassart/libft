@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/20 15:29:16 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/20 15:33:42 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS				= $(addprefix ft_, $(addsuffix .c, \
 						isdigit \
 						isprint \
 						isspace \
+						memcpy \
 						memset \
 						strlen \
 						tolower \

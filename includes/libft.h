@@ -6,7 +6,7 @@
 /*   By: bbrassar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:09:53 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/20 15:29:42 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/20 15:33:35 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 
 int		ft_isspace(int c);
+
+void	*ft_memcpy(void *dst, void const *src, size_t n);
 
 void	*ft_memset(void *b, int c, size_t len);
 
