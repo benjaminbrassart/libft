@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/20 14:25:23 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/20 14:27:15 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ DIR_SRCS			= src
 DIR_INCLUDES		= includes
 
 SRCS				= $(addprefix ft_, $(addsuffix .c, \
+						isalnum \
 						isalpha \
 						isdigit \
 						isspace \
