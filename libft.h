@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 13:49:08 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/22 16:00:11 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ char		*ft_strchr(char const *s, int c);
 char		*ft_strrchr(char const *s, int c);
 
 int			ft_strncmp(char const *s1, char const *s2, size_t n);
+
+size_t		ft_strlcpy(char *dst, char const *src, size_t dstsize);
 
 int			ft_atoi(char const *s);
 
