@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 10:04:05 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 10:10:42 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/22 10:40:27 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memmove(void *dst, void const *src, size_t len)
 {
 	unsigned char		*d;
-	unsigned char const *s;
+	unsigned char const	*s;
 
 	if (src == NULL && dst == NULL)
 		return (NULL);
