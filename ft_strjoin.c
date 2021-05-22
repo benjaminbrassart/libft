@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 11:12:42 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 13:29:55 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/22 16:38:10 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_concat(char *dst, char const *src)
 		*dst++ = *src++;
 }
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len;
 	char	*str;
