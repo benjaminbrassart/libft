@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 11:00:28 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 11:02:49 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/22 11:36:18 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	str = ft_strdup(s);
-	i = 0;
+	i = -1;
 	if (str)
-		while (str[i])
-		{
+		while (str[++i])
 			str[i] = f(i, str[i]);
-			i++;
-		}
 	return (str);
 }
