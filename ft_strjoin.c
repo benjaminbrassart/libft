@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 11:12:42 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 16:38:10 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/22 20:21:26 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 static void	ft_concat(char *dst, char const *src)
 {
-	int	i;
-
-	i = 0;
 	while (*dst)
 		dst++;
 	while (*src)
