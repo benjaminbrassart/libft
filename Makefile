@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/22 21:26:38 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/22 22:45:32 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,11 +56,8 @@ BONUS_SRCS			= $(addprefix ft_, $(addsuffix .c, \
 						lstnew \
 						lstadd_front \
 						lstsize \
+						lstlast \
 						lstadd_back \
-						lstdelone \
-						lstclear \
-						lstiter \
-						lstmap \
 					  ))
 
 OBJS				= $(SRCS:.c=.o)
@@ -80,11 +77,11 @@ $(NAME):			$(OBJS)
 					ar rc $@ $^
 					ranlib $@
 
-$(NAME_SO):			$(OBJS)
+$(NAME_SO):			$(OBJS) $(BONUS_OBJS)
 					$(CC) $(CFLAGS) -fPIC -shared $^ -o $@
 
 clean:
-					rm -f $(OBJS)
+					rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean:				clean
 					rm -f $(NAME) $(NAME_SO)
