@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/22 18:22:29 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/22 21:26:38 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,12 +52,29 @@ SRCS				= $(addprefix ft_, $(addsuffix .c, \
 						) \
 					  ))
 
+BONUS_SRCS			= $(addprefix ft_, $(addsuffix .c, \
+						lstnew \
+						lstadd_front \
+						lstsize \
+						lstadd_back \
+						lstdelone \
+						lstclear \
+						lstiter \
+						lstmap \
+					  ))
+
 OBJS				= $(SRCS:.c=.o)
+
+BONUS_OBJS			= $(BONUS_SRCS:.c=.o)
 
 %.o:				%.c
 					$(CC) $(CFLAGS) -I . -c $< -o $@
 
 all:				$(NAME)
+
+bonus:				$(NAME) $(OBJS) $(BONUS_OBJS)
+					ar rc $^
+					ranlib $<
 
 $(NAME):			$(OBJS)
 					ar rc $@ $^
@@ -74,4 +91,4 @@ fclean:				clean
 
 re:					fclean all
 
-.PHONY:				all clean fclean re
+.PHONY:				all clean fclean re bonus
