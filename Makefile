@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/22 09:36:49 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/22 10:16:10 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,20 +19,23 @@ CC					= gcc
 CFLAGS				= -Wall -Wextra -Werror
 
 SRCS				= $(addprefix ft_, $(addsuffix .c, \
-						atoi \
-						bzero \
-						isalnum \
-						isalpha \
-						isascii \
-						isdigit \
-						isprint \
-						isspace \
-						memcmp \
-						memcpy \
 						memset \
+						bzero \
+						memcpy \
+						memmove \
+						memcmp \
 						strlen \
-						tolower \
+						isalpha \
+						isdigit \
+						isalnum \
+						isascii \
+						isprint \
 						toupper \
+						tolower \
+						strchr \
+						atoi \
+						calloc \
+						strdup \
 					  ))
 
 OBJS				= $(SRCS:.c=.o)

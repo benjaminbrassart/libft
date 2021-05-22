@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:36:03 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 09:44:13 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/05/20 14:55:25 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/05/22 09:42:26 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-int	ft_atoi(char const *s)
+void	*ft_calloc(size_t count, size_t size)
 {
-	int	i;
-	int	sign;
+	void	*mem;
 
-	i = 0;
-	sign = 1;
-	while (*s == ' ' || (*s >= 9 && *s <= 13))
-		s++;
-	while (*s == '+' || *s == '-')
-		if (*s++ == '-')
-			sign = -sign;
-	while (ft_isdigit(*s))
-		i = i * 10 + *s++ - '0';
-	return (i * sign);
+	mem = malloc(count * size);
+	if (mem)
+		ft_bzero(mem, count * size);
+	return (mem);
 }

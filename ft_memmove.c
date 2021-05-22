@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/20 12:36:03 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 09:44:13 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/05/22 10:04:05 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/05/22 10:10:42 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char const *s)
+void	*ft_memmove(void *dst, void const *src, size_t len)
 {
-	int	i;
-	int	sign;
+	unsigned char		*d;
+	unsigned char const *s;
 
-	i = 0;
-	sign = 1;
-	while (*s == ' ' || (*s >= 9 && *s <= 13))
-		s++;
-	while (*s == '+' || *s == '-')
-		if (*s++ == '-')
-			sign = -sign;
-	while (ft_isdigit(*s))
-		i = i * 10 + *s++ - '0';
-	return (i * sign);
+	if (src == NULL && dst == NULL)
+		return (NULL);
+	if (src > dst)
+		return (ft_memcpy(dst, src, len));
+	d = dst;
+	s = src;
+	while (len--)
+		d[len] = s[len];
+	return (dst);
 }
