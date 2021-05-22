@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 13:43:29 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/22 13:49:08 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
 
 void		*ft_memcpy(void *dst, void const *src, size_t len);
+
+void		*ft_memccpy(void *dst, void const *src, int c, size_t n);
 
 void		*ft_memmove(void *dst, void const *src, size_t len);
 

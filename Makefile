@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/22 13:43:08 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/22 14:00:08 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,13 @@ NAME_SO				= libft.so
 
 CC					= gcc
 
-CFLAGS				= -Wall -Wextra -Werror
+CFLAGS				= -Wall -Wextra -Werror -g
 
 SRCS				= $(addprefix ft_, $(addsuffix .c, \
 						memset \
 						bzero \
 						memcpy \
+						memccpy \
 						memmove \
 						memchr \
 						memcmp \
