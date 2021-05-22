@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:36:03 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 09:44:13 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/22 16:28:36 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ int	ft_atoi(char const *s)
 
 	i = 0;
 	sign = 1;
-	while (*s == ' ' || (*s >= 9 && *s <= 13))
+	while (*s == ' ' || (*s >= '\t' && *s <= '\r'))
 		s++;
-	while (*s == '+' || *s == '-')
-		if (*s++ == '-')
-			sign = -sign;
+	if (*s == '-' || *s == '+')
+	{
+		if (*s == '-')
+			sign = -1;
+		s++;
+	}
 	while (ft_isdigit(*s))
 		i = i * 10 + *s++ - '0';
 	return (i * sign);
