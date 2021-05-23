@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/23 14:52:39 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/23 15:17:41 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRCS				= $(addprefix ft_, $(addsuffix .c, \
 						strrchr \
 						strncmp \
 						strlcpy \
+						strnstr \
 						atoi \
 						calloc \
 						strdup \
