@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/23 14:18:32 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/23 14:26:54 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ BONUS_SRCS			= $(addprefix ft_, $(addsuffix .c, \
 						lstsize \
 						lstlast \
 						lstadd_back \
+						lstdelone \
 						lstiter \
 					  ))
 
