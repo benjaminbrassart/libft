@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/23 14:45:38 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/25 13:53:23 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int		ft_strncmp(char const *s1, char const *s2, size_t n);
 
 size_t	ft_strlcpy(char *dst, char const *src, size_t dstsize);
 
+size_t	ft_strlcat(char *dst, char const *src, size_t dstsize);
+
 char	*ft_strnstr(char const *haystack, char const *needle, size_t len);
 
 int		ft_atoi(char const *s);
@@ -65,6 +67,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 
 char	*ft_strtrim(char const *s, char const *set);
+
+char	**ft_split(char const *s, char c);
 
 char	*ft_itoa(int nb);
 
