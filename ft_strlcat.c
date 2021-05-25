@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 11:46:01 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/25 16:57:45 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/25 18:25:30 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dst, char const *src, size_t dstsize)
 	size_t	j;
 
 	i = 0;
-	while (dst[i])
+	while (dst[i] && i <= dstsize)
 		++i;
 	if (i >= dstsize)
 		return (ft_strlen(src) + dstsize);
