@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/25 16:34:53 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/25 19:06:33 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,7 @@ $(NAME_SO):			$(OBJS) $(BONUS_OBJS)
 					$(CC) $(CFLAGS) -fPIC -shared $^ -o $@
 
 clean:
-					rm -f $(OBJS) $(OBJS_BONUS)
+					rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean:				clean
 					rm -f $(NAME) $(NAME_SO)
