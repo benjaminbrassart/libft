@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 12:19:42 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/25 20:01:07 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/25 20:04:12 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,4 @@ char	**ft_split(char const *s, char c)
 	}
 	split[sz] = NULL;
 	return (split);
-}
-
-#include <stdio.h>
-
-int	main(void)
-{
-	char	**split;
-
-	split = ft_split("        olol", ' ');
-	while (*split)
-		printf("%s\n", *split++);
-	ft_split_clear(split);
 }
