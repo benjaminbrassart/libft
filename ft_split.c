@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 12:19:42 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/25 17:22:27 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/25 20:01:07 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,18 @@ static void	*ft_split_clear(char **split)
 	return (NULL);
 }
 
-static size_t	ft_split_size(char const *s, char c)
+static char	**ft_split_init(char const *s, char c, size_t *sz)
 {
-	size_t	sz;
-
-	while (*s == c)
-		++s;
-	sz = 0;
+	if (!s)
+		return (NULL);
+	*sz = 0;
 	while (*s)
 	{
-		if (sz == 0)
-			++sz;
-		if (*(s + 1) && *s == c && *(s + 1) != c)
-			++sz;
+		if (*s != c && (*(s + 1) == c || *(s + 1) == 0))
+			++(*sz);
 		++s;
 	}
-	return (sz);
+	return (ft_calloc(*sz + 1, sizeof (char *)));
 }
 
 char	**ft_split(char const *s, char c)
@@ -49,24 +45,34 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 	char	**split;
 
-	sz = ft_split_size(s, c);
-	split = ft_calloc(sz + 1, sizeof (char *));
-	if (split)
+	split = ft_split_init(s, c, &sz);
+	if (!split)
+		return (NULL);
+	i = 0;
+	while (i < sz)
 	{
-		i = 0;
-		while (i < sz)
-		{
-			j = 0;
-			while (*s == c)
-				++s;
-			while (s[j] && s[j] != c)
-				++j;
-			split[i] = ft_substr(s, 0, j);
-			if (split[i++] == NULL)
-				return (ft_split_clear(split));
-			s += j;
-		}
-		split[sz] = NULL;
+		j = 0;
+		while (*s == c)
+			++s;
+		while (s[j] && s[j] != c)
+			++j;
+		split[i] = ft_substr(s, 0, j);
+		if (split[i++] == NULL)
+			return (ft_split_clear(split));
+		s += j;
 	}
+	split[sz] = NULL;
 	return (split);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char	**split;
+
+	split = ft_split("        olol", ' ');
+	while (*split)
+		printf("%s\n", *split++);
+	ft_split_clear(split);
 }
