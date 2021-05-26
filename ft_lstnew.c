@@ -6,17 +6,18 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 21:40:24 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/25 16:24:26 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/26 15:14:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*lst;
 
-	lst = ft_calloc(1, sizeof (t_list *));
+	lst = malloc(sizeof (t_list));
 	if (lst)
 	{
 		lst->content = content;
