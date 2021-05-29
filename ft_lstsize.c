@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 22:31:06 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 22:31:51 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/29 12:11:30 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	if (lst == NULL)
-		return (0);
-	return (1 + ft_lstsize(lst->next));
+	if (lst)
+		return (1 + ft_lstsize(lst->next));
+	return (0);
 }

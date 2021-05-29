@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 21:40:24 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/26 15:14:41 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/29 12:10:42 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*lst;
 
-	lst = malloc(sizeof (t_list));
+	lst = malloc(sizeof (*lst));
 	if (lst)
 	{
 		lst->content = content;
