@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/27 16:39:47 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/29 08:27:36 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,12 +79,10 @@ BONUS_OBJS			= $(BONUS_SRCS:.c=.o)
 all:				$(NAME)
 
 bonus:				$(NAME) $(OBJS) $(BONUS_OBJS)
-					ar rc $^
-					ranlib $<
+					ar rcs $^
 
 $(NAME):			$(OBJS)
-					ar rc $@ $^
-					ranlib $@
+					ar rcs $@ $^
 
 $(NAME_SO):			$(OBJS) $(BONUS_OBJS)
 					$(CC) $(CFLAGS) -fPIC -shared $^ -o $@
