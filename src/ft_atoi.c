@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:36:03 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/29 12:02:14 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/05/30 16:58:55 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(char const *s)
 
 	i = 0;
 	sign = 1;
-	while (*s == ' ' || (*s >= '\t' && *s <= '\r'))
+	while (ft_isspace(*s))
 		++s;
 	if (*s == '-' || *s == '+')
 		if (*s++ == '-')
