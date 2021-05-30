@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/29 08:27:36 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/05/30 15:39:09 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ CC					= gcc
 
 CFLAGS				= -Wall -Wextra -Werror
 
-SRCS				= $(addprefix ft_, $(addsuffix .c, \
+DIR_SRC				= src
+
+SRC					= $(addprefix ft_, $(addsuffix .c, \
 						memset \
 						bzero \
 						memcpy \
@@ -27,16 +29,30 @@ SRCS				= $(addprefix ft_, $(addsuffix .c, \
 						memchr \
 						memcmp \
 						strlen \
-						isalpha \
-						isdigit \
 						isalnum \
+						isalpha \
 						isascii \
+						iscntrl \
+						isdigit \
+						isgraph \
+						islower \
 						isprint \
+						ispunct \
+						isspace \
+						isupper \
+						isxdigit \
 						toupper \
 						tolower \
 						strchr \
+						strcmp \
+						strcpy \
+						strcat \
 						strrchr \
+						strnlen \
 						strncmp \
+						strncpy \
+						strncat \
+						strndup \
 						strlcpy \
 						strlcat \
 						strnstr \
@@ -49,15 +65,14 @@ SRCS				= $(addprefix ft_, $(addsuffix .c, \
 						split \
 						itoa \
 						strmapi \
-						$(addsuffix _fd, \
-							putchar \
-							putstr \
-							putendl \
-							putnbr \
-						) \
-					  ))
-
-BONUS_SRCS			= $(addprefix ft_, $(addsuffix .c, \
+						putchar \
+						putchar_fd \
+						putstr \
+						putstr_fd \
+						putendl \
+						putendl_fd \
+						putnbr \
+						putnbr_fd \
 						lstnew \
 						lstadd_front \
 						lstsize \
@@ -69,30 +84,30 @@ BONUS_SRCS			= $(addprefix ft_, $(addsuffix .c, \
 						lstmap \
 					  ))
 
-OBJS				= $(SRCS:.c=.o)
+DIR_OBJ				= obj
 
-BONUS_OBJS			= $(BONUS_SRCS:.c=.o)
+OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
 
-%.o:				%.c
-					$(CC) $(CFLAGS) -I . -c $< -o $@
+DIR_INCLUDE			= include
 
-all:				$(NAME)
+all:				$(NAME) $(NAME_SO)
 
-bonus:				$(NAME) $(OBJS) $(BONUS_OBJS)
-					ar rcs $^
+$(DIR_OBJ)/%.o:		$(DIR_SRC)/%.c
+					@mkdir -p $(DIR_OBJ)
+					$(CC) $(CFLAGS) -I $(DIR_INCLUDE) -c $< -o $@
 
-$(NAME):			$(OBJS)
+$(NAME):			$(OBJ)
 					ar rcs $@ $^
 
-$(NAME_SO):			$(OBJS) $(BONUS_OBJS)
+$(NAME_SO):			$(OBJ)
 					$(CC) $(CFLAGS) -fPIC -shared $^ -o $@
 
 clean:
-					rm -f $(OBJS) $(BONUS_OBJS)
+					rm -f $(OBJ)
 
 fclean:				clean
 					rm -f $(NAME) $(NAME_SO)
 
 re:					fclean all
 
-.PHONY:				all clean fclean re bonus
+.PHONY:				all clean fclean re
