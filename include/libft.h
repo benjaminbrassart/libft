@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/30 15:34:36 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/06/03 18:20:30 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,10 @@ void	*ft_memccpy(void *dst, void const *src, int c, size_t n);
 void	*ft_memmove(void *dst, void const *src, size_t len);
 
 void	*ft_memchr(void const *s, int c, size_t n);
+
+void	*ft_memrchr(void const *s, int c, size_t n);
+
+void	*ft_rawmemchr(void const *s, int c);
 
 int		ft_memcmp(void const *s1, void const *s2, size_t n);
 
@@ -62,6 +66,8 @@ char	*ft_strcpy(char *dst, char const *src);
 
 char	*ft_strcat(char *dst, char const *src);
 
+char	*ft_strstr(char const *haystack, char const *needle);
+
 char	*ft_strchr(char const *s, int c);
 
 char	*ft_strrchr(char const *s, int c);
@@ -97,6 +103,8 @@ char	*ft_strtrim(char const *s, char const *set);
 char	**ft_split(char const *s, char c);
 
 char	*ft_itoa(int n);
+
+char	*ft_strmap(char const *s, char (*f)(char));
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
@@ -136,8 +144,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 
-void	ft_lstiter(t_list *lst, void (*f)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(t_list *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+char	*ft_strrepeat(char const *s, unsigned int times);
 
 #endif

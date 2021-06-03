@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/30 15:39:09 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/06/03 18:16:11 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,8 @@ SRC					= $(addprefix ft_, $(addsuffix .c, \
 						memccpy \
 						memmove \
 						memchr \
+						memrchr \
+						rawmemchr \
 						memcmp \
 						strlen \
 						isalnum \
@@ -47,6 +49,7 @@ SRC					= $(addprefix ft_, $(addsuffix .c, \
 						strcmp \
 						strcpy \
 						strcat \
+						strstr \
 						strrchr \
 						strnlen \
 						strncmp \
@@ -64,6 +67,7 @@ SRC					= $(addprefix ft_, $(addsuffix .c, \
 						strtrim \
 						split \
 						itoa \
+						strmap \
 						strmapi \
 						putchar \
 						putchar_fd \
@@ -82,6 +86,7 @@ SRC					= $(addprefix ft_, $(addsuffix .c, \
 						lstclear \
 						lstiter \
 						lstmap \
+						strrepeat \
 					  ))
 
 DIR_OBJ				= obj
