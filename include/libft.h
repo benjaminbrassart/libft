@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/06/03 18:43:33 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/06/03 18:48:44 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,6 @@ char		*ft_strtrim(char const *s, char const *set);
 char		**ft_split(char const *s, char c);
 
 char		*ft_itoa(int n);
-
-char		*ft_strmap(char const *s, char (*f)(char));
 
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
