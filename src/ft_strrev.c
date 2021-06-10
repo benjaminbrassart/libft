@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 18:38:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/30 18:41:59 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/06/11 01:49:54 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ char	*ft_strrev(char const *s)
 	n = ft_strlen(s);
 	str = ft_calloc(n + 1, sizeof (char));
 	if (str)
+	{
 		while (i++ < n)
 		{
 			str[n - i] = s[i];
 			++i;
 		}
+	}
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 16:18:19 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/30 16:19:47 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/06/11 01:31:21 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_rawmemchr(void const *s, int c)
 {
-	unsigned char const *b;
+	unsigned char const	*b;
 	unsigned char		ch;
 
 	b = s;
