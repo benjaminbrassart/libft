@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/06/11 03:13:38 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/06/13 15:31:33 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,6 @@ void		ft_lstiter(t_list *lst, void (*f)(t_list *));
 
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-char		*ft_strrepeat(char const *s, unsigned int times);
+char		*ft_strrepeat(char const *s, int times);
 
 #endif

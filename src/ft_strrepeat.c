@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_repeat.c                                    :+:      :+:    :+:   */
+/*   ft_strrepeat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 18:09:42 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/30 18:15:49 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/06/13 15:31:57 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_str_repeat(char const *s, unsigned int times)
+char	*ft_strrepeat(char const *s, int times)
 {
 	size_t	i;
 	size_t	len;
