@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/06/16 15:41:23 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/06/16 18:04:31 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,8 +99,10 @@ DIR_INCLUDE			= include
 
 all:				$(NAME) $(NAME_SO)
 
-$(DIR_OBJ)/%.o:		$(DIR_SRC)/%.c
-					@mkdir -p $(DIR_OBJ)
+$(DIR_OBJ):
+					mkdir -p $@
+
+$(DIR_OBJ)/%.o:		$(DIR_SRC)/%.c $(DIR_OBJ)
 					$(CC) $(CFLAGS) -I $(DIR_INCLUDE) -c $< -o $@
 
 $(NAME):			$(OBJ)
@@ -110,7 +112,7 @@ $(NAME_SO):			$(OBJ)
 					$(CC) $(CFLAGS) -fPIC -shared $^ -o $@
 
 clean:
-					rm -f $(OBJ)
+					rm -rf $(DIR_OBJ)
 
 fclean:				clean
 					rm -f $(NAME) $(NAME_SO)
