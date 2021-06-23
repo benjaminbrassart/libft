@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/06/16 18:04:31 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/06/23 00:53:55 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,7 @@ SRC					= $(addprefix ft_, $(addsuffix .c, \
 						strtrim \
 						split \
 						itoa \
+						lltoa \
 						strmapi \
 						putchar \
 						putchar_fd \
