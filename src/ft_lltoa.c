@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 00:35:20 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/06/23 00:53:11 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/06/23 03:28:34 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,23 +48,4 @@ char	*ft_lltoa(long long n)
 			s[0] = '-';
 	}
 	return (s);
-}
-
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main(void)
-{
-	char	*s;
-
-	s = ft_lltoa(-318738935478);
-	printf("%s\n", s);
-	free(s);
-	s = ft_lltoa(318738935478);
-	printf("%s\n", s);
-	free(s);
-	s = ft_lltoa(0);
-	printf("%s\n", s);
-	free(s);
-	return (0);
 }
