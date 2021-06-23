@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/06/23 00:53:55 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/06/23 08:17:26 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,7 +103,7 @@ all:				$(NAME) $(NAME_SO)
 $(DIR_OBJ):
 					mkdir -p $@
 
-$(DIR_OBJ)/%.o:		$(DIR_SRC)/%.c $(DIR_OBJ)
+$(DIR_OBJ)/%.o:		$(DIR_SRC)/%.c | $(DIR_OBJ)
 					$(CC) $(CFLAGS) -I $(DIR_INCLUDE) -c $< -o $@
 
 $(NAME):			$(OBJ)
