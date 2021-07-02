@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 05:25:52 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/01 05:50:23 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/02 01:31:34 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,9 @@ int	get_next_line(int fd, char **line)
 	if (BUFFER_SIZE < 1)
 		return (-1);
 	list = get_or_add_fd(&head, fd);
+	if (list->rest[0])
+		if (copy_until_line_break(line, list->rest, list->rest))
+			return (1);
 	bytes = 1;
 	while (bytes > 0)
 	{
