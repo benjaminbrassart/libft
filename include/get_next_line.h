@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benjamin <benjamin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 05:23:34 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/01 05:41:54 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/07 01:58:11 by benjamin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 typedef struct s_gnl_fd_list
 {
 	int						fd;
-	char					rest[BUFFER_SIZE + 1];
+	char					*rest;
 	struct s_gnl_fd_list	*next;
 }	t_gnl_fd_list;
 
