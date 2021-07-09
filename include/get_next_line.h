@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamin <benjamin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 05:23:34 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/07 01:58:11 by benjamin         ###   ########.fr       */
+/*   Updated: 2021/07/09 23:32:54 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_gnl_fd_list
 	struct s_gnl_fd_list	*next;
 }	t_gnl_fd_list;
 
-int	get_next_line(int fd, char **line)
-	__attribute__((nonnull(2)));
+int	get_next_line(int fd, char **line);
 
 #endif
