@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/30 22:40:36 by bbrassar          #+#    #+#              #
-#    Updated: 2021/07/02 01:32:53 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/07/10 20:09:09 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ ifndef BASE_DIR_LIBFT
 STANDALONE					:= 1
 endif
 
-ifndef CFLAGS
-CFLAGS						= -Wall -Werror -Wextra
-endif
+CFLAGS_LIBFT				= -Wall -Werror -Wextra -c -MMD -I$(DIR_INCLUDE_LIBFT)
+
+LDFLAGS_LIBFT				= -fPIC -shared
 
 BASENAME_LIBFT				:= libft.a
 
@@ -126,19 +126,23 @@ SRC_LIBFT					= $(addprefix ft_, $(addsuffix .c,	\
 
 OBJ_LIBFT					= $(addprefix $(DIR_OBJ_LIBFT)/, $(SRC_LIBFT:.c=.o))
 
+DEP_LIBFT					= $(OBJ_LIBFT:.o=.d)
+
+$(NAME_LIBFT):				$(OBJ_LIBFT)
+							ar rcs $@ $^
+
+-include $(DEP_LIBFT)
+
 $(RULE_PREFIX)all:			$(NAME_LIBFT) $(NAME_SO_LIBFT)
 
 $(DIR_OBJ_LIBFT):
 							mkdir -p $@
 
 $(DIR_OBJ_LIBFT)/%.o:		$(DIR_SRC_LIBFT)/%.c |$(DIR_OBJ_LIBFT)
-							$(CC) $(CFLAGS) -c $< -o $@ -I $(DIR_INCLUDE_LIBFT)
-
-$(NAME_LIBFT):				$(OBJ_LIBFT)
-							ar rcs $@ $^
+							$(CC) $(CFLAGS_LIBFT) $< -o $@
 
 $(NAME_SO_LIBFT):			$(OBJ_LIBFT)
-							$(CC) $(CFLAGS) -fPIC -shared $^ -o $@
+							$(CC) $(LDFLAGS_LIBFT) $^ -o $@
 
 $(RULE_PREFIX)clean:
 							rm -rf $(DIR_OBJ_LIBFT)
@@ -147,15 +151,5 @@ $(RULE_PREFIX)fclean:		$(RULE_PREFIX)clean
 							rm -f $(NAME_LIBFT) $(NAME_SO_LIBFT)
 
 $(RULE_PREFIX)re:			$(addprefix $(RULE_PREFIX), fclean all)
-
-debug:
-							@echo "$(STANDALONE)"
-							@echo "NAME_LIBFT: $(NAME_LIBFT)"
-							@echo "NAME_SO_LIBFT: $(NAME_SO_LIBFT)"
-							@echo "DIR_SRC_LIBFT: $(DIR_SRC_LIBFT)"
-							@echo "DIR_OBJ_LIBFT: $(DIR_OBJ_LIBFT)"
-							@echo "DIR_INCLUDE_LIBFT: $(DIR_INCLUDE_LIBFT)"
-							@echo "RULE_PREFIX: $(RULE_PREFIX)"
-							@echo "OBJ_LIBFT: $(OBJ_LIBFT)"
 
 .PHONY:						$(addprefix $(RULE_PREFIX), all clean fclean re)
