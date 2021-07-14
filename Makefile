@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/07/14 02:57:18 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/07/14 03:59:18 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC					=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
 						ft_strchr.c ft_strrchr.c ft_strcspn.c ft_strnlen.c \
 						ft_strncmp.c ft_strncpy.c ft_strncat.c ft_strndup.c \
 						ft_strlcpy.c ft_strlcat.c ft_strnstr.c ft_atoi.c \
+						ft_strcat.c ft_strcpy.c ft_strcmp.c ft_strstr.c \
 						ft_atoll.c ft_calloc.c ft_strdup.c ft_substr.c \
 						ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 						ft_lltoa.c ft_strmapi.c ft_putchar.c ft_putchar_fd.c \
