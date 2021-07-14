@@ -5,151 +5,69 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/30 22:40:36 by bbrassar          #+#    #+#              #
-#    Updated: 2021/07/10 20:09:09 by bbrassar         ###   ########.fr        #
+#    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
+#    Updated: 2021/07/14 02:57:18 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-ifndef BASE_DIR_LIBFT
-STANDALONE					:= 1
-endif
+NAME				= libft.a
 
-CFLAGS_LIBFT				= -Wall -Werror -Wextra -c -MMD -I$(DIR_INCLUDE_LIBFT)
+NAME_SO				= libft.so
 
-LDFLAGS_LIBFT				= -fPIC -shared
+CFLAGS				= -Wall -Werror -Wextra -I$(DIR_INCLUDE) -c -MMD
 
-BASENAME_LIBFT				:= libft.a
+LDFLAGS				= -fPIC -shared
 
-BASENAME_SO_LIBFT			:= libft.so
+DIR_SRC				= src
 
-BASEDIR_SRC_LIBFT			:= src
+SRC					=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
+						ft_memmove.c ft_memchr.c ft_memrchr.c ft_rawmemchr.c \
+						ft_memcmp.c ft_strlen.c ft_isalnum.c ft_isalpha.c \
+						ft_isascii.c ft_iscntrl.c ft_isdigit.c ft_isgraph.c \
+						ft_islower.c ft_isprint.c ft_ispunct.c ft_isspace.c \
+						ft_isupper.c ft_isxdigit.c ft_toupper.c ft_tolower.c \
+						ft_strchr.c ft_strrchr.c ft_strcspn.c ft_strnlen.c \
+						ft_strncmp.c ft_strncpy.c ft_strncat.c ft_strndup.c \
+						ft_strlcpy.c ft_strlcat.c ft_strnstr.c ft_atoi.c \
+						ft_atoll.c ft_calloc.c ft_strdup.c ft_substr.c \
+						ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
+						ft_lltoa.c ft_strmapi.c ft_putchar.c ft_putchar_fd.c \
+						ft_putstr.c ft_putstr_fd.c ft_putendl.c \
+						ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_lstnew.c \
+						ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+						ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
+						ft_lstiter.c ft_lstmap.c ft_strrepeat.c get_next_line.c
 
-BASEDIR_OBJ_LIBFT			:= obj
+DIR_OBJ				= obj
 
-BASEDIR_INCLUDE_LIBFT		:= include
+OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
 
-ifdef STANDALONE
-NAME_LIBFT					:= $(BASENAME_LIBFT)
+DIR_INCLUDE			= include
 
-NAME_SO_LIBFT				:= $(BASENAME_SO_LIBFT)
+DEPENDENCIES		= $(OBJ:.o=.d)
 
-DIR_SRC_LIBFT				:= $(BASEDIR_SRC_LIBFT)
+$(NAME):			$(OBJ)
+					ar rcs $@ $^
 
-DIR_OBJ_LIBFT				:= $(BASEDIR_OBJ_LIBFT)
+-include $(DEPENDENCIES)
 
-DIR_INCLUDE_LIBFT			:= $(BASEDIR_INCLUDE_LIBFT)
-else
-RULE_PREFIX					:= libft-
+$(DIR_OBJ):
+					mkdir -p $@
 
-NAME_LIBFT					:= $(BASE_DIR_LIBFT)/$(BASENAME_LIBFT)
+$(DIR_OBJ)/%.o:		$(DIR_SRC)/%.c |$(DIR_OBJ)
+					$(CC) $(CFLAGS) $< -o $@
 
-NAME_SO_LIBFT				:= $(BASE_DIR_LIBFT)/$(BASENAME_SO_LIBFT)
+$(NAME_SO):			$(OBJ)
+					$(CC) $^ -o $@ $(LDFLAGS)
 
-DIR_SRC_LIBFT				:= $(BASE_DIR_LIBFT)/$(BASEDIR_SRC_LIBFT)
+all:				$(NAME) $(NAME_SO)
 
-DIR_OBJ_LIBFT				:= $(BASE_DIR_LIBFT)/$(BASEDIR_OBJ_LIBFT)
+clean:
+					rm -rf $(DIR_OBJ)
 
-DIR_INCLUDE_LIBFT			:= $(BASE_DIR_LIBFT)/$(BASEDIR_INCLUDE_LIBFT)
-endif
+fclean:				clean
+					rm -f $(NAME) $(NAME_SO)
 
-SRC_LIBFT					= $(addprefix ft_, $(addsuffix .c,	\
-								memset							\
-								bzero							\
-								memcpy							\
-								memccpy							\
-								memmove							\
-								memchr							\
-								memrchr							\
-								rawmemchr						\
-								memcmp							\
-								strlen							\
-								isalnum							\
-								isalpha							\
-								isascii							\
-								iscntrl							\
-								isdigit							\
-								isgraph							\
-								islower							\
-								isprint							\
-								ispunct							\
-								isspace							\
-								isupper							\
-								isxdigit						\
-								toupper							\
-								tolower							\
-								strchr							\
-								strcmp							\
-								strcpy							\
-								strcat							\
-								strstr							\
-								strrchr							\
-								strcspn							\
-								strnlen							\
-								strncmp							\
-								strncpy							\
-								strncat							\
-								strndup							\
-								strlcpy							\
-								strlcat							\
-								strnstr							\
-								atoi							\
-								atoll							\
-								patoi							\
-								calloc							\
-								strdup							\
-								substr							\
-								strjoin							\
-								strtrim							\
-								split							\
-								itoa							\
-								lltoa							\
-								strmapi							\
-								putchar							\
-								putchar_fd						\
-								putstr							\
-								putstr_fd						\
-								putendl							\
-								putendl_fd						\
-								putnbr							\
-								putnbr_fd						\
-								lstnew							\
-								lstadd_front					\
-								lstsize							\
-								lstlast							\
-								lstadd_back						\
-								lstdelone						\
-								lstclear						\
-								lstiter							\
-								lstmap							\
-								strrepeat						\
-							)) get_next_line.c
+re:					fclean all
 
-OBJ_LIBFT					= $(addprefix $(DIR_OBJ_LIBFT)/, $(SRC_LIBFT:.c=.o))
-
-DEP_LIBFT					= $(OBJ_LIBFT:.o=.d)
-
-$(NAME_LIBFT):				$(OBJ_LIBFT)
-							ar rcs $@ $^
-
--include $(DEP_LIBFT)
-
-$(RULE_PREFIX)all:			$(NAME_LIBFT) $(NAME_SO_LIBFT)
-
-$(DIR_OBJ_LIBFT):
-							mkdir -p $@
-
-$(DIR_OBJ_LIBFT)/%.o:		$(DIR_SRC_LIBFT)/%.c |$(DIR_OBJ_LIBFT)
-							$(CC) $(CFLAGS_LIBFT) $< -o $@
-
-$(NAME_SO_LIBFT):			$(OBJ_LIBFT)
-							$(CC) $(LDFLAGS_LIBFT) $^ -o $@
-
-$(RULE_PREFIX)clean:
-							rm -rf $(DIR_OBJ_LIBFT)
-
-$(RULE_PREFIX)fclean:		$(RULE_PREFIX)clean
-							rm -f $(NAME_LIBFT) $(NAME_SO_LIBFT)
-
-$(RULE_PREFIX)re:			$(addprefix $(RULE_PREFIX), fclean all)
-
-.PHONY:						$(addprefix $(RULE_PREFIX), all clean fclean re)
+.PHONY:				all clean fclean re
