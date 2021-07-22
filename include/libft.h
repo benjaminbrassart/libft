@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:14:29 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:19:20 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,4 @@
 # include "ft_stdlib.h"
 # include "ft_string.h"
 
-#endif
+#endif /* LIBFT_H */
