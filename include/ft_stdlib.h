@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_stdlib.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:14:29 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/07/22 14:11:44 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/07/22 14:12:23 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
- ! This file exists for legacy purpose.
- ! You may want to include header files individually.
- */
+#ifndef FT_STDLIB_H
+# define FT_STDLIB_H
 
-#ifndef LIBFT_H
-# define LIBFT_H
+# include "ft_def.h"
 
-# include "ft_ctype.h"
-# include "ft_list.h"
-# include "ft_stdio.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
+int			ft_atoi(char const *s);
 
-#endif
+long long	ft_atoll(char const *s);
+
+void		*ft_calloc(t_size count, t_size size);
+
+char		*ft_itoa(int n);
+
+char		*ft_lltoa(long long n);
+
+#endif /* FT_STDLIB_H */

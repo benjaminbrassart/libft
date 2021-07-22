@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_stdio.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:14:29 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/07/22 14:12:35 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/07/22 14:14:05 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FT_STDIO_H
+# define FT_STDIO_H
+
 /*
- ! This file exists for legacy purpose.
- ! You may want to include header files individually.
+ TODO: Reverse every ft_put*_fd prototypes (fd, *)
  */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+void	ft_putchar(char c);
 
-# include "ft_ctype.h"
-# include "ft_list.h"
-# include "ft_stdio.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
+void	ft_putchar_fd(char c, int fd);
 
-#endif
+void	ft_putstr(char const *s);
+
+void	ft_putstr_fd(char const *s, int fd);
+
+void	ft_putendl(char const *s);
+
+void	ft_putendl_fd(char const *s, int fd);
+
+void	ft_putnbr(int n);
+
+void	ft_putnbr_fd(int n, int fd);
+
+#endif /* FT_STDIO_H */

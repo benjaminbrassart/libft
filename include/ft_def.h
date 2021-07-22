@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_def.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:14:29 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/07/22 14:04:45 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/07/22 14:15:04 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
- ! This file exists for legacy purpose.
- ! You may want to include header files individually.
- */
+#ifndef FT_DEF_H
+# define FT_DEF_H
 
-#ifndef LIBFT_H
-# define LIBFT_H
+# ifndef NULL
+#  define NULL ((void *)0)
+# endif /* NULL */
 
-# include "ft_ctype.h"
-# include "ft_list.h"
-# include "ft_stdio.h"
-# include "ft_stdlib.h"
-# include "ft_string.h"
+typedef unsigned long	t_size;
 
-#endif
+typedef long			t_ssize;
+
+#endif /* FT_DEF_H */
