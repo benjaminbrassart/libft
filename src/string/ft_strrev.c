@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 18:38:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/06/11 01:49:54 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrev(char const *s)
 {
-	size_t	i;
-	size_t	n;
+	t_size	i;
+	t_size	n;
 	char	*str;
 
 	i = 0;

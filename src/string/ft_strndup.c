@@ -6,15 +6,15 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 15:30:42 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/30 15:32:22 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(char const *s, size_t n)
+char	*ft_strndup(char const *s, t_size n)
 {
-	size_t	len;
+	t_size	len;
 	char	*str;
 
 	len = ft_strnlen(s, n);

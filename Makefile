@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/07/22 13:49:26 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/07/22 13:54:35 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ DIR_INCLUDE			= include
 DEPENDENCIES		= $(OBJ:.o=.d)
 
 $(NAME):			$(OBJ)
-					ar rcs $@ $^
+					ar rs $@ $?
 
 -include $(DEPENDENCIES)
 

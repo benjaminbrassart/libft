@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:52:27 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/29 12:17:38 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strdup(char const *s)
 {
-	size_t	n;
+	t_size	n;
 	char	*str;
 
 	n = ft_strlen(s);

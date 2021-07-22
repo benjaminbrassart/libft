@@ -6,15 +6,15 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 00:35:20 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/06/23 03:28:34 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_lltoa_size(long long n)
+static t_size	ft_lltoa_size(long long n)
 {
-	size_t			sz;
+	t_size			sz;
 
 	sz = 1;
 	while (n / 10)
@@ -27,7 +27,7 @@ static size_t	ft_lltoa_size(long long n)
 
 char	*ft_lltoa(long long n)
 {
-	size_t				sz;
+	t_size				sz;
 	unsigned long long	num;
 	char				*s;
 

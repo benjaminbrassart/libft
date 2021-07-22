@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 12:19:42 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/25 20:04:12 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static void	*ft_split_clear(char **split)
 {
-	size_t	i;
+	t_size	i;
 
 	i = 0;
 	while (split[i])
@@ -24,7 +24,7 @@ static void	*ft_split_clear(char **split)
 	return (NULL);
 }
 
-static char	**ft_split_init(char const *s, char c, size_t *sz)
+static char	**ft_split_init(char const *s, char c, t_size *sz)
 {
 	if (!s)
 		return (NULL);
@@ -40,9 +40,9 @@ static char	**ft_split_init(char const *s, char c, size_t *sz)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	sz;
-	size_t	i;
-	size_t	j;
+	t_size	sz;
+	t_size	i;
+	t_size	j;
 	char	**split;
 
 	split = ft_split_init(s, c, &sz);

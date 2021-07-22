@@ -6,15 +6,15 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 15:24:34 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/30 15:45:18 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strnlen(char const *s, size_t n)
+t_size	ft_strnlen(char const *s, t_size n)
 {
-	size_t	 len;
+	t_size	 len;
 
 	len = 0;
 	while (s[len] && len < n)

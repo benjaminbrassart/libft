@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamin <benjamin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 05:25:52 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/07 02:01:30 by benjamin         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ int	gnl_remove_fd(t_gnl_fd_list **head, int fd, int rv)
 	return (rv);
 }
 
-void	gnl_join(char **line, char *buffer, size_t n)
+void	gnl_join(char **line, char *buffer, t_size n)
 {
-	size_t	i;
+	t_size	i;
 	char	*s;
 
 	i = 0;

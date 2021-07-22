@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 15:23:31 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/30 15:24:22 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strcat(char *dst, char const *src)
 {
-	size_t	i;
+	t_size	i;
 
 	i = 0;
 	while (dst[i])

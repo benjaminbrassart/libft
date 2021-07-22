@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 10:16:19 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 10:24:49 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strchr(char const *s, int c)
 {
 	unsigned char	ch;
-	size_t			len;
-	size_t			i;
+	t_size			len;
+	t_size			i;
 
 	ch = c;
 	len = ft_strlen(s);

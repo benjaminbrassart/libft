@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 18:44:43 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/30 18:47:13 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strstr(char const *haystack, char const *needle)
 {
-	size_t	i;
-	size_t	j;
+	t_size	i;
+	t_size	j;
 
 	i = 0;
 	while (haystack[i])

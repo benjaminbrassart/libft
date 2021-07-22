@@ -6,15 +6,15 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:00:56 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/25 16:09:09 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_itoa_size(int n)
+static t_size	ft_itoa_size(int n)
 {
-	size_t			sz;
+	t_size			sz;
 
 	sz = 1;
 	while (n / 10)
@@ -27,7 +27,7 @@ static size_t	ft_itoa_size(int n)
 
 char	*ft_itoa(int n)
 {
-	size_t			sz;
+	t_size			sz;
 	unsigned int	num;
 	char			*s;
 
