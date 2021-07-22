@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/06/23 00:54:25 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/07/22 13:30:12 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,6 @@ char		*ft_strnstr(char const *haystack, char const *needle, size_t len);
 int			ft_atoi(char const *s);
 
 long long	ft_atoll(char const *s);
-
-int			ft_patoi(char const **s);
 
 void		*ft_calloc(size_t count, size_t size);
 
