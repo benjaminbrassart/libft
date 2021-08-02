@@ -17,8 +17,6 @@
 #  define FT_NULL ((void *)0)
 # endif /* FT_NULL */
 
-typedef _Bool			t_bool;
-
 typedef unsigned long	t_size;
 
 typedef long			t_ssize;
