@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 12:12:03 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/08/02 17:01:21 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strtrim(char const *s, char const *set)
 	t_size	i;
 
 	if (!(s && set))
-		return (NULL);
+		return (FT_NULL);
 	while (*s && ft_strchr(set, *s))
 		++s;
 	i = ft_strlen(s);

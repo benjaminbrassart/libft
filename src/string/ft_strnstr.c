@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/23 15:13:49 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/08/02 17:01:21 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ char	*ft_strnstr(char const *haystack, char const *needle, t_size len)
 			return ((char *)haystack + i);
 		i++;
 	}
-	return (NULL);
+	return (FT_NULL);
 }

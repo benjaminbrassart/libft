@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/30 16:18:19 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/06/11 01:31:21 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/08/02 17:01:21 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_rawmemchr(void const *s, int c)
 			return ((void *)b);
 		++b;
 	}
-	return (NULL);
+	return (FT_NULL);
 }

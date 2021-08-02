@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 05:25:52 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:15:24 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/08/02 17:01:21 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_gnl_fd_list	*gnl_find_or_create_fd(t_gnl_fd_list **head, int fd)
 	if (list)
 	{
 		list->fd = fd;
-		list->rest = NULL;
+		list->rest = FT_NULL;
 		list->next = *head;
 		*head = list;
 	}
@@ -42,7 +42,7 @@ int	gnl_remove_fd(t_gnl_fd_list **head, int fd, int rv)
 	t_gnl_fd_list	*prev;
 	t_gnl_fd_list	*list;
 
-	prev = NULL;
+	prev = FT_NULL;
 	list = *head;
 	while (list)
 	{
@@ -95,7 +95,7 @@ int	gnl_copy_until_line_break(char **line, char *buffer, char **rest)
 	if (buffer[i])
 		*rest = ft_strdup(buffer + i + 1);
 	else
-		*rest = NULL;
+		*rest = FT_NULL;
 	i = !!buffer[i];
 	free(buffer);
 	return (i);
@@ -103,16 +103,16 @@ int	gnl_copy_until_line_break(char **line, char *buffer, char **rest)
 
 int	get_next_line(int fd, char **line)
 {
-	static t_gnl_fd_list	*head = NULL;
+	static t_gnl_fd_list	*head = FT_NULL;
 	t_gnl_fd_list			*list;
 	char					*buffer;
 	int						bytes;
 
-	if (line == NULL || BUFFER_SIZE < 1)
+	if (line == FT_NULL || BUFFER_SIZE < 1)
 		return (-1);
 	list = gnl_find_or_create_fd(&head, fd);
 	bytes = 1;
-	*line = NULL;
+	*line = FT_NULL;
 	if (list && list->rest)
 		if (gnl_copy_until_line_break(line, ft_strdup(list->rest), &list->rest))
 			return (1);
