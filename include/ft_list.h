@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:03:00 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:04:12 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/09/10 18:01:07 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,4 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *));
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-#endif /* FT_LIST_H */
+#endif

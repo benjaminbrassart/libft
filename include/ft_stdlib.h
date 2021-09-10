@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:11:44 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:12:23 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/09/10 18:01:33 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,4 @@ char		*ft_itoa(int n);
 
 char		*ft_lltoa(long long n);
 
-#endif /* FT_STDLIB_H */
+#endif

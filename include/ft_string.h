@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:08:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/07/22 14:11:15 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/09/10 18:01:40 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 char	*ft_strrepeat(char const *s, int times);
 
-#endif /* FT_STRING_H */
+#endif
