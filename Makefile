@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/07/22 13:54:35 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/09/29 04:04:38 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME				= libft.a
 
 NAME_SO				= libft.so
 
-CFLAGS				= -Wall -Werror -Wextra -I$(DIR_INCLUDE) -c -MMD
+CFLAGS				= -Wall -Werror -Wextra -c -MMD -I$(DIR_INCLUDE) \
+						-I$(DIR_INCLUDE)/private
 
 LDFLAGS				= -fPIC -shared
 
@@ -29,6 +30,12 @@ SRC					=	$(addsuffix .c, \
 							$(addprefix stdio/ft_, \
 								putchar_fd putchar putendl_fd putendl \
 								putnbr_fd putnbr putstr_fd putstr \
+							) \
+							$(addprefix stdio/printf/ft_, \
+								patoi get_printer parse_options print_char \
+								print_hex print_int print_pointer print_raw \
+								print_string print_uint printf dprintf vprintf \
+								vdprintf putstr_fn \
 							) \
 							$(addprefix list/ft_, \
 								lstadd_back lstadd_front lstclear lstdelone \
@@ -48,25 +55,6 @@ SRC					=	$(addsuffix .c, \
 							) \
 							$(addprefix get_next_line/, get_next_line) \
 						)
-
-# SRC					=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c \
-# 						ft_memmove.c ft_memchr.c ft_memrchr.c ft_rawmemchr.c \
-# 						ft_memcmp.c ft_strlen.c ft_isalnum.c ft_isalpha.c \
-# 						ft_isascii.c ft_iscntrl.c ft_isdigit.c ft_isgraph.c \
-# 						ft_islower.c ft_isprint.c ft_ispunct.c ft_isspace.c \
-# 						ft_isupper.c ft_isxdigit.c ft_toupper.c ft_tolower.c \
-# 						ft_strchr.c ft_strrchr.c ft_strcspn.c ft_strnlen.c \
-# 						ft_strncmp.c ft_strncpy.c ft_strncat.c ft_strndup.c \
-# 						ft_strlcpy.c ft_strlcat.c ft_strnstr.c ft_atoi.c \
-# 						ft_strcat.c ft_strcpy.c ft_strcmp.c ft_strstr.c \
-# 						ft_atoll.c ft_calloc.c ft_strdup.c ft_substr.c \
-# 						ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
-# 						ft_lltoa.c ft_strmapi.c ft_putchar.c ft_putchar_fd.c \
-# 						ft_putstr.c ft_putstr_fd.c ft_putendl.c \
-# 						ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_lstnew.c \
-# 						ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-# 						ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
-# 						ft_lstiter.c ft_lstmap.c ft_strrepeat.c get_next_line.c
 
 DIR_OBJ				= obj
 
