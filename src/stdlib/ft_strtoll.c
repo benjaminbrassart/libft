@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 12:08:57 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/10/01 12:09:37 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/10/01 12:15:53 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ long long	ft_strtoll(char const *s, char const **endptr)
 
 	ll = 0;
 	sign = 1;
+	while (ft_isspace(*s))
+		++s;
 	if (*s == '-' || *s == '+')
 		if (*s++ == '-')
 			sign = -1;
