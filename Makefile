@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/09/29 04:04:38 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/10/01 17:52:27 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRC					=	$(addsuffix .c, \
 							) \
 							$(addprefix list/ft_, \
 								lstadd_back lstadd_front lstclear lstdelone \
-								lstiter lstlast lstmap lstnew lstsize \
+								lstiter lstiteri lstlast lstmap lstnew lstsize \
 							) \
 							$(addprefix string/ft_, \
 								bzero memccpy memchr memcmp memcpy memmove \
