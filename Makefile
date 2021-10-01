@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/09/29 04:04:38 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/10/01 09:33:07 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ SRC					=	$(addsuffix .c, \
 								strjoin strlcat strlcpy strlen strmapi \
 								strncasecmp strncat strncmp strncpy strndup \
 								strnlen strnstr strrchr strrepeat strrev \
-								strstr strtrim substr \
+								strstr strtrim substr strrstr \
 							) \
 							$(addprefix stdlib/ft_, \
 								calloc atoi atoll itoa lltoa \
