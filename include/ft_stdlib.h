@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:11:44 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/10/01 12:11:05 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/10/01 12:19:59 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,15 @@ long		ft_strtol(char const *s, char const **endptr)
 			__attribute__((nonnull(1)));
 
 long long	ft_strtoll(char const *s, char const **endptr)
+			__attribute__((nonnull(1)));
+
+int			ft_strtoui(char const *s, char const **endptr)
+			__attribute__((nonnull(1)));
+
+long		ft_strtoulu(char const *s, char const **endptr)
+			__attribute__((nonnull(1)));
+
+long long	ft_strtoull(char const *s, char const **endptr)
 			__attribute__((nonnull(1)));
 
 #endif

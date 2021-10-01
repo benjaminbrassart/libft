@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/10/01 12:13:14 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/10/01 12:20:17 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ SRC					=	$(addsuffix .c, \
 							) \
 							$(addprefix stdlib/ft_, \
 								calloc atoi atoll itoa lltoa strtoi strtol \
-								strtoll \
+								strtoll strtoui strtoul strtoull \
 							) \
 							$(addprefix get_next_line/, get_next_line) \
 						)
