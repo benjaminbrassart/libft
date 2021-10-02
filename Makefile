@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/10/01 18:21:43 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/10/02 14:40:57 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,9 @@ SRC					=	$(addsuffix .c, \
 								calloc atoi atoll itoa lltoa strtoi strtol \
 								strtoll strtoui strtoul strtoull \
 							) \
-							$(addprefix get_next_line/, get_next_line) \
+							$(addprefix get_next_line/, \
+								get_next_line wrap_get_next_line \
+							) \
 						)
 
 DIR_OBJ				= obj
