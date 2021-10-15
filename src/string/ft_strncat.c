@@ -21,7 +21,7 @@ char	*ft_strncat(char *dst, char const *src, t_size n)
 	j = 0;
 	while (dst[j])
 		++j;
-	while (src[i] && i < n)
+	while (i < n && src[i])
 		dst[j++] = src[i++];
 	dst[j] = 0;
 	return (dst);
