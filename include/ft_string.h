@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:08:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/10/17 07:23:46 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/10/17 07:27:18 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	*ft_memrchr(void const *s, int c, t_size n);
 void	*ft_rawmemchr(void const *s, int c);
 
 int		ft_memcmp(void const *s1, void const *s2, t_size n);
+
+char	*ft_stpcpy(char *dst, char const *src);
 
 t_size	ft_strlen(char const *s);
 
