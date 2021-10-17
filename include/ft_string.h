@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:08:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/10/17 07:27:18 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/10/17 07:42:12 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,7 @@ char	*ft_strrepeat(char const *s, int times);
 char	*ft_strrstr(char const *haystack, char const *needle);
 
 char	*ft_strpbrk(char const *s, char const *accept);
+
+char	*ft_strchrnul(char const *s, int c);
 
 #endif
