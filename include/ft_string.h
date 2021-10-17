@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:08:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/10/17 07:17:27 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/10/17 07:23:46 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,9 @@ char	*ft_strchr(char const *s, int c);
 
 char	*ft_strrchr(char const *s, int c);
 
-t_size	ft_strcspn(char const *s, char const *set);
+t_size	ft_strspn(char const *s, char const *accept);
+
+t_size	ft_strcspn(char const *s, char const *reject);
 
 t_size	ft_strnlen(char const *s, t_size n);
 

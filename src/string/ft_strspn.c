@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcspn.c                                       :+:      :+:    :+:   */
+/*   ft_strspn.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 03:10:01 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/10/17 07:22:48 by bbrassar         ###   ########.fr       */
+/*   Created: 2021/10/17 07:20:31 by bbrassar          #+#    #+#             */
+/*   Updated: 2021/10/17 07:22:30 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
-t_size	ft_strcspn(char const *s, char const *reject)
+t_size	ft_strspn(char const *s, char const *accept)
 {
-	t_size	i;
+	t_size	len;
 
-	i = 0;
-	while (!ft_strchr(reject, s[i]))
-		++i;
-	return (i);
+	len = 0;
+	while (s[len] && ft_strchr(accept, s[len]))
+		++len;
+	return (len);
 }
