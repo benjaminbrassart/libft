@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/11/09 14:56:02 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/11/09 20:27:09 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,24 @@ CFLAGS				= -Wall -Werror -Wextra -c -MMD -I$(DIR_INCLUDE) \
 
 LDFLAGS				= -fPIC
 
+ifeq ($(DEBUG), true)
+CFLAGS				+= -g
+
+LDFLAGS				+= -g
+endif
+
+LDFLAGS				= -fPIC
+
 DIR_SRC				= src
 
 SRC					=	$(addsuffix .c, \
 							$(addprefix ctype/ft_, \
 								isalnum isalpha isascii iscntrl isdigit \
 								isgraph islower isprint ispunct isspace \
-								isupper isxdigit tolower toupper \
+								isupper isxdigit tolower toupper isblank \
 							) \
 							$(addprefix stdio/ft_, \
-								putchar_fd putchar putendl_fd putendl \
-								putnbr_fd putnbr putstr_fd putstr \
+								dputc dputi dputs dputui putc puti puts putui \
 							) \
 							$(addprefix stdio/printf/ft_, \
 								patoi get_printer parse_options print_char \
