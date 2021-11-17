@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 14:12:35 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/11/09 19:29:45 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/11/17 22:52:27 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,7 @@ int		ft_putub(unsigned int n, char const *base)
  * @param base the base to format the number in
  * @return -1 if an error occurred, the number of written characters otherwise
  */
-int		ft_pdutub(int fd, unsigned int n, char const *base)
+int		ft_dputub(int fd, unsigned int n, char const *base)
 		__attribute__((nonnull(3)));
 
 void	ft_putchar(char c)

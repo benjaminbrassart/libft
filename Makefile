@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/11/09 20:27:09 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/11/17 22:51:11 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,15 +17,13 @@ NAME_SO				= libft.so
 CFLAGS				= -Wall -Werror -Wextra -c -MMD -I$(DIR_INCLUDE) \
 						-I$(DIR_INCLUDE)/private
 
-LDFLAGS				= -fPIC
+LDFLAGS				= 
 
 ifeq ($(DEBUG), true)
 CFLAGS				+= -g
 
 LDFLAGS				+= -g
 endif
-
-LDFLAGS				= -fPIC
 
 DIR_SRC				= src
 
@@ -36,7 +34,8 @@ SRC					=	$(addsuffix .c, \
 								isupper isxdigit tolower toupper isblank \
 							) \
 							$(addprefix stdio/ft_, \
-								dputc dputi dputs dputui putc puti puts putui \
+								dputc putc dputi puti dputs puts dputui putui \
+								dputnl putnl putub dputub \
 							) \
 							$(addprefix stdio/printf/ft_, \
 								patoi get_printer parse_options print_char \
@@ -82,10 +81,10 @@ $(NAME):			$(OBJ)
 
 $(DIR_OBJ)/%.o:		$(DIR_SRC)/%.c
 					@mkdir -p $(@D)
-					$(CC) $(CFLAGS) $< -o $@
+					$(CC) $(CFLAGS) -fPIC $< -o $@
 
-$(NAME_SO):			$(OBJ) $(DIR_OBJ)/entry.o
-					$(CC) $^ -o $@ $(LDFLAGS)
+$(NAME_SO):			$(OBJ)
+					$(CC) $^ -o $@ -shared -fPIC
 
 all:				$(NAME) $(NAME_SO)
 
