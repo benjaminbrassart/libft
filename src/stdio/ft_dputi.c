@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 18:17:00 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/11/09 18:44:54 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/11/26 00:22:27 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,23 @@
 
 int	ft_dputi(int fd, int n)
 {
+	char			buff[11];
+	int				i;
 	unsigned int	num;
-	int				printed_chars;
-	int				sub;
 
-	printed_chars = 0;
+	if (n == 0)
+		return (write(fd, "0", 1));
 	if (n < 0)
-	{
-		printed_chars = ft_dputc(fd, '-');
-		if (printed_chars == -1)
-			return (-1);
 		num = -n;
-	}
 	else
 		num = n;
-	sub = ft_dputui(fd, num);
-	if (sub == -1)
-		return (-1);
-	return (printed_chars + sub);
+	i = 11;
+	while (num)
+	{
+		buff[--i] = num % 10 + '0';
+		num /= 10;
+	}
+	if (n < 0)
+		buff[--i] = '-';
+	return (write(fd, buff + i, 11 - i));
 }
