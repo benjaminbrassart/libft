@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 02:36:44 by bbrassar          #+#    #+#              #
-#    Updated: 2021/11/18 02:15:00 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/11/26 00:06:04 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,9 @@ SRC					=	$(addsuffix .c, \
 							$(addprefix stdio/ft_, \
 								dputc putc dputi puti dputs puts dputui putui \
 								dputnl putnl putub dputub \
+							) \
+							$(addprefix stdio/base/ft_, \
+								isbasevalid \
 							) \
 							$(addprefix stdio/printf/ft_, \
 								patoi get_printer parse_options print_char \
