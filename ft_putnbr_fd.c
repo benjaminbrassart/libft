@@ -6,24 +6,30 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 10:54:33 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 10:58:44 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:53:54 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int i, int fd)
 {
-	unsigned int	nb;
+	char			buffer[INT_MAX_DIGITS];
+	unsigned int	n;
+	unsigned int	count;
 
-	if (n < 0)
-	{
-		nb = -n;
-		ft_putchar_fd('-', fd);
-	}
+	if (i < 0)
+		n = -i;
 	else
-		nb = n;
-	if (nb > 9)
-		ft_putnbr_fd(nb / 10, fd);
-	ft_putchar_fd(nb % 10 + '0', fd);
+		n = i;
+	count = 0;
+	while (n || count == 0)
+	{
+		buffer[INT_MAX_DIGITS - ++count] = n % 10 + '0';
+		n /= 10;
+	}
+	if (i < 0)
+		buffer[INT_MAX_DIGITS - ++count] = '-';
+	write(fd, buffer + INT_MAX_DIGITS - count, count);
 }
