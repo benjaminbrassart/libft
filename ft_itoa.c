@@ -6,46 +6,33 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:00:56 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/25 16:09:09 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:51:52 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	ft_itoa_size(int n)
+char	*ft_itoa(int i)
 {
-	size_t			sz;
-
-	sz = 1;
-	while (n / 10)
-	{
-		++sz;
-		n /= 10;
-	}
-	return (sz);
-}
-
-char	*ft_itoa(int n)
-{
-	size_t			sz;
-	unsigned int	num;
+	char			buffer[INT_MAX_DIGITS];
+	unsigned int	n;
+	unsigned int	count;
 	char			*s;
 
-	sz = ft_itoa_size(n);
-	s = ft_calloc(sz + !!(n < 0) + 1, sizeof (char));
-	if (n < 0)
-		num = -n;
+	if (i < 0)
+		n = -i;
 	else
-		num = n;
-	if (s)
+		n = i;
+	count = 0;
+	while (n || count == 0)
 	{
-		while (sz)
-		{
-			s[--sz + !!(n < 0)] = (num % 10) + '0';
-			num /= 10;
-		}
-		if (n < 0)
-			s[0] = '-';
+		buffer[INT_MAX_DIGITS - ++count] = n % 10 + '0';
+		n /= 10;
 	}
+	if (i < 0)
+		buffer[INT_MAX_DIGITS - ++count] = '-';
+	s = ft_calloc(count, sizeof (*s) + 1);
+	if (s)
+		ft_memmove(s, buffer + INT_MAX_DIGITS - count, count);
 	return (s);
 }
