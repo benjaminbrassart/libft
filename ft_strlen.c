@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bbrassar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:08:56 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/20 12:12:19 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:40:45 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ size_t	ft_strlen(char const *s)
 
 	n = 0;
 	while (s[n])
-		n++;
+		++n;
 	return (n);
 }
