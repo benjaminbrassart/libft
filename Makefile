@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/12/09 15:12:49 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/09 15:21:35 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,8 @@ $(NAME):			$(OBJ)
 					ar rcs $@ $^
 
 $(NAME_BONUS):		$(OBJ) $(OBJ_BONUS)
+
+-include $(DEP) $(DEP_BONUS)
 
 %.o:				%.c
 					$(CC) $(CFLAGS) $< -o $@
