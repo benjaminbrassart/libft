@@ -6,93 +6,53 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2021/05/29 08:27:36 by bbrassar         ###   ########.fr        #
+#    Updated: 2021/12/09 15:12:49 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				= libft.a
+NAME_BONUS			= libft_bonus.a
 
-NAME_SO				= libft.so
+CC					= clang
+CFLAGS				= -Wall -Wextra -Werror -c -MMD -MP -I.
 
-CC					= gcc
+ifeq ($(DEBUG), true)
+CFLAGS				+= -g
+endif
 
-CFLAGS				= -Wall -Wextra -Werror
+SRC					= ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+						ft_memchr.c ft_memcmp.c ft_strlen.c ft_isalpha.c ft_isdigit.c \
+						ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c \
+						ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c ft_strlcat.c \
+						ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c \
+						ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
+						ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+SRC_BONUS			= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+						ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-SRCS				= $(addprefix ft_, $(addsuffix .c, \
-						memset \
-						bzero \
-						memcpy \
-						memccpy \
-						memmove \
-						memchr \
-						memcmp \
-						strlen \
-						isalpha \
-						isdigit \
-						isalnum \
-						isascii \
-						isprint \
-						toupper \
-						tolower \
-						strchr \
-						strrchr \
-						strncmp \
-						strlcpy \
-						strlcat \
-						strnstr \
-						atoi \
-						calloc \
-						strdup \
-						substr \
-						strjoin \
-						strtrim \
-						split \
-						itoa \
-						strmapi \
-						$(addsuffix _fd, \
-							putchar \
-							putstr \
-							putendl \
-							putnbr \
-						) \
-					  ))
+OBJ					= $(SRC:.c=.o)
+OBJ_BONUS			= $(SRC_BONUS:.c=.o)
+DEP					= $(OBJ:.o=.d)
+DEP_BONUS			= $(OBJ_BONUS:.o=.d)
 
-BONUS_SRCS			= $(addprefix ft_, $(addsuffix .c, \
-						lstnew \
-						lstadd_front \
-						lstsize \
-						lstlast \
-						lstadd_back \
-						lstdelone \
-						lstclear \
-						lstiter \
-						lstmap \
-					  ))
+$(NAME):			$(OBJ)
+					ar rcs $@ $^
 
-OBJS				= $(SRCS:.c=.o)
-
-BONUS_OBJS			= $(BONUS_SRCS:.c=.o)
+$(NAME_BONUS):		$(OBJ) $(OBJ_BONUS)
 
 %.o:				%.c
-					$(CC) $(CFLAGS) -I . -c $< -o $@
+					$(CC) $(CFLAGS) $< -o $@
 
 all:				$(NAME)
 
-bonus:				$(NAME) $(OBJS) $(BONUS_OBJS)
-					ar rcs $^
-
-$(NAME):			$(OBJS)
-					ar rcs $@ $^
-
-$(NAME_SO):			$(OBJS) $(BONUS_OBJS)
-					$(CC) $(CFLAGS) -fPIC -shared $^ -o $@
-
 clean:
-					rm -f $(OBJS) $(BONUS_OBJS)
+					rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean:				clean
-					rm -f $(NAME) $(NAME_SO)
+					rm -f $(NAME) $(NAME_BONUS)
 
 re:					fclean all
+
+bonus:				$(NAME_BONUS)
 
 .PHONY:				all clean fclean re bonus
