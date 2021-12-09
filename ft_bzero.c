@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 15:00:07 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/20 15:01:04 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:16:02 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*b;
-
-	b = s;
-	while (n--)
-		*b++ = 0;
+	ft_memset(s, 0, n);
 }
