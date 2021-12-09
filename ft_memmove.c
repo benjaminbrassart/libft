@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 10:04:05 by bbrassar          #+#    #+#             */
-/*   Updated: 2021/05/22 10:40:27 by bbrassar         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:21:02 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,17 @@ void	*ft_memmove(void *dst, void const *src, size_t len)
 
 	if (src == NULL && dst == NULL)
 		return (NULL);
-	if (src > dst)
-		return (ft_memcpy(dst, src, len));
 	d = dst;
 	s = src;
-	while (len--)
-		d[len] = s[len];
+	if (src > dst)
+	{
+		while (len--)
+			*d++ = *s++;
+	}
+	else
+	{
+		while (len--)
+			d[len] = s[len];
+	}
 	return (dst);
 }
