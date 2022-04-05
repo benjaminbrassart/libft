@@ -57,7 +57,8 @@ SRC					= \
 						ft_split.c \
 						ft_itoa.c \
 						ft_strnlen.c \
-						ft_strndup.c
+						ft_strndup.c \
+						ft_strtoi.c
 
 OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
 DEP					= $(OBJ:.o=.d))

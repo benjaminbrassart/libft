@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/04/05 22:49:39 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/04/05 22:56:48 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,7 @@ char	*ft_itoa(int n);
 size_t	ft_strnlen(char const *s, size_t maxlen);
 
 char	*ft_strndup(char const *s, size_t len);
+
+int		ft_strtoi(char const *s, char **endptr);
 
 #endif
