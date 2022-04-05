@@ -1,4 +1,3 @@
-/*.o
-/*.d
+/obj
 /libft.a
-/main.c
+/.vscode
