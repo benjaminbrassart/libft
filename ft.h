@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/04/06 01:42:13 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/05/03 02:39:56 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,7 @@ size_t	ft_strcspn(char const *s, char const *reject);
 size_t	ft_strspn(char const *s, char const *accept);
 
 char	*ft_strstr(char const *haystack, char const *needle);
+
+char	*ft_strrstr(char const *haystack, char const *needle);
 
 #endif
