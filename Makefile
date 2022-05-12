@@ -63,7 +63,8 @@ SRC					= \
 						ft_strcspn.c \
 						ft_strspn.c \
 						ft_strstr.c \
-						ft_strrstr.c
+						ft_strrstr.c \
+						get_next_line.c
 
 OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
 DEP					= $(OBJ:.o=.d))
