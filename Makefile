@@ -64,6 +64,7 @@ SRC					= \
 						ft_strspn.c \
 						ft_strstr.c \
 						ft_strrstr.c \
+						ft_strpbrk.c \
 						get_next_line.c
 
 OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
