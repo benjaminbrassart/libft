@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/05/16 15:55:27 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/05/18 20:27:24 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 # include <stddef.h>
 
 void	*ft_memset(void *b, int c, size_t len);
-
-void	ft_bzero(void *s, size_t n);
 
 void	*ft_memcpy(void *dst, void const *src, size_t len);
 
