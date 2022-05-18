@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:00:56 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/04/05 22:43:16 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:37:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_itoa(int i)
 	char			buffer[MAX_INT_LEN];
 	unsigned int	n;
 	unsigned int	count;
-	char			*s;
 
 	if (i < 0)
 		n = -i;
@@ -32,8 +31,5 @@ char	*ft_itoa(int i)
 	}
 	if (i < 0)
 		buffer[MAX_INT_LEN - ++count] = '-';
-	s = ft_calloc(count, sizeof (*s) + 1);
-	if (s)
-		ft_memmove(s, buffer + MAX_INT_LEN - count, count);
-	return (s);
+	return (ft_strndup(buffer + MAX_INT_LEN - count, count));
 }
