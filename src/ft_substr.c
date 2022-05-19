@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 11:17:27 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/05/18 20:26:30 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:14:53 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-
 	if (s == NULL)
 		return (NULL);
 	if (len == 0 || start >= ft_strlen(s))
