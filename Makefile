@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2022/12/28 11:16:29 by bbrassar         ###   ########.fr        #
+#    Updated: 2022/12/28 11:16:59 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRC += ft_isdigit.c
 SRC += ft_isalnum.c
 SRC += ft_isascii.c
 SRC += ft_isprint.c
+SRC += ft_isspace.c
 SRC += ft_toupper.c
 SRC += ft_tolower.c
 SRC += ft_strchr.c
