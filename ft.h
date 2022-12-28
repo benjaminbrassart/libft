@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/12/28 09:54:40 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 10:25:13 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,31 +84,39 @@ int
 ft_atoi(char const *s);
 
 void
-*ft_calloc(size_t count, size_t size);
+*ft_calloc(size_t count, size_t size)
+__attribute__((malloc));
 
 char
-*ft_strdup(char const *s);
+*ft_strdup(char const *s)
+__attribute__((malloc));
 
 char
-*ft_substr(char const *s, unsigned int start, size_t len);
+*ft_substr(char const *s, unsigned int start, size_t len)
+__attribute__((malloc));
 
 char
-*ft_strjoin(char const *s1, char const *s2);
+*ft_strjoin(char const *s1, char const *s2)
+__attribute__((malloc));
 
 char
-*ft_strtrim(char const *s, char const *set);
+*ft_strtrim(char const *s, char const *set)
+__attribute__((malloc));
 
 char
-**ft_split(char const *s, char const *set);
+**ft_split(char const *s, char const *set)
+__attribute__((malloc));
 
 char
-*ft_itoa(int n);
+*ft_itoa(int n)
+__attribute__((malloc));
 
 size_t
 ft_strnlen(char const *s, size_t maxlen);
 
 char
-*ft_strndup(char const *s, size_t len);
+*ft_strndup(char const *s, size_t len)
+__attribute__((malloc));
 
 int
 ft_strtoi(char const *s, char **endptr);
