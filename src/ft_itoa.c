@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:00:56 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/12/28 09:28:55 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 09:40:30 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_itoa(int i)
 	else
 		n = i;
 	count = 0;
-	while (n || count == 0)
+	while (n > 0 || count == 0)
 	{
 		buffer[sizeof (buffer) - ++count] = n % 10 + '0';
 		n /= 10;

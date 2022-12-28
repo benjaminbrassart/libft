@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 22:57:21 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/04/05 22:57:21 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 09:42:58 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ size_t	ft_strcspn(char const *s, char const *reject)
 	size_t	j;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		j = 0;
-		while (reject[j])
+		while (reject[j] != '\0')
 		{
 			if (s[i] == reject[j])
 				return (i);

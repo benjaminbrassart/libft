@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 12:19:42 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/04/05 22:46:46 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 09:42:31 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	**ft_split(char const *s, char const *set)
 	size_t			n;
 
 	array = ft_calloc(size + 1, sizeof (*array));
-	if (!array)
+	if (array == NULL)
 		return (NULL);
 	array[size] = NULL;
 	n = 0;
@@ -64,7 +64,7 @@ char	**ft_split(char const *s, char const *set)
 		while (ft_strchr(set, *s))
 			++s;
 		p = s;
-		while (*p && ft_strchr(set, *p) == NULL)
+		while (*p != '\0' && ft_strchr(set, *p) == NULL)
 			++p;
 		array[n] = ft_strndup(s, p - s);
 		if (array[n] == NULL)

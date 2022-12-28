@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 15:31:32 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/04/05 22:37:46 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 09:41:14 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, void const *src, size_t len)
 		return (NULL);
 	d = dst;
 	s = src;
-	while (len--)
+	while (len-- > 0)
 		*d++ = *s++;
 	return (dst);
 }

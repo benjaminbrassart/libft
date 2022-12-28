@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:36:03 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/12/28 09:39:53 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 09:49:01 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 int	ft_atoi(char const *s)
 {
-	return ft_strtoi(s, NULL);
+	return (ft_strtoi(s, NULL));
 }
