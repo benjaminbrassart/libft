@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/12/28 10:25:13 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 11:39:59 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,9 @@ __attribute__((malloc));
 char
 *ft_itoa(int n)
 __attribute__((malloc));
+
+size_t
+ft_itoa_s(int n, char *buffer);
 
 size_t
 ft_strnlen(char const *s, size_t maxlen);

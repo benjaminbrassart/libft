@@ -6,17 +6,16 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 14:00:56 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/12/28 09:40:30 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 11:35:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 
-char	*ft_itoa(int i)
+size_t	ft_itoa_s(int i, char *buffer)
 {
-	char			buffer[11];
 	unsigned int	n;
-	unsigned int	count;
+	size_t			count;
 
 	if (i < 0)
 		n = -i;
@@ -25,10 +24,19 @@ char	*ft_itoa(int i)
 	count = 0;
 	while (n > 0 || count == 0)
 	{
-		buffer[sizeof (buffer) - ++count] = n % 10 + '0';
+		buffer[11 - ++count] = n % 10 + '0';
 		n /= 10;
 	}
 	if (i < 0)
-		buffer[sizeof (buffer) - ++count] = '-';
-	return (ft_strndup(buffer + sizeof (buffer) - count, count));
+		buffer[11 - ++count] = '-';
+	ft_memmove(buffer, buffer + (11 - count), count);
+	return (count);
+}
+
+char	*ft_itoa(int i)
+{
+	char			buffer[11];
+	size_t const	len = ft_itoa_s(i, buffer);
+
+	return (ft_strndup(buffer, len));
 }
