@@ -10,83 +10,89 @@
 #                                       #
 # **************************************************************************** #
 
-NAME				= libft.a
+NAME := libft.a
 
-CC					= cc
-CFLAGS				= -Wall -Wextra -Werror -c -MMD -MP -I. -Iprivate
+CC := cc
+CFLAGS := -Wall
+CFLAGS += -Wextra
+CFLAGS += -Werror
+CFLAGS += -c
+CFLAGS += -MMD -MP
+CFLAGS += -I.
+CFLAGS += -Iprivate
 
-AR					= ar
-ARFLAGS				= rs
+AR := ar
+ARFLAGS := rs
 
-RM					= rm -f
+RM := rm -vf
+MKDIR := mkdir -vp
 
 ifeq ($(DEBUG), true)
-CFLAGS				+= -g3
+CFLAGS += -g3
 endif
 
-DIR_SRC				= src
-DIR_OBJ				= obj
+DIR_SRC := src
+DIR_OBJ := obj
 
-SRC					= \
-						ft_memset.c \
-						ft_memcpy.c \
-						ft_memccpy.c \
-						ft_memmove.c \
-						ft_memchr.c \
-						ft_memcmp.c \
-						ft_strlen.c \
-						ft_isalpha.c \
-						ft_isdigit.c \
-						ft_isalnum.c \
-						ft_isascii.c \
-						ft_isprint.c \
-						ft_toupper.c \
-						ft_tolower.c \
-						ft_strchr.c \
-						ft_strrchr.c \
-						ft_strncmp.c \
-						ft_strlcpy.c \
-						ft_strlcat.c \
-						ft_strnstr.c \
-						ft_atoi.c \
-						ft_calloc.c \
-						ft_strdup.c \
-						ft_substr.c \
-						ft_strjoin.c \
-						ft_strtrim.c \
-						ft_split.c \
-						ft_itoa.c \
-						ft_strnlen.c \
-						ft_strndup.c \
-						ft_strtoi.c \
-						ft_strcmp.c \
-						ft_strcspn.c \
-						ft_strspn.c \
-						ft_strstr.c \
-						ft_strrstr.c \
-						ft_strpbrk.c \
-						get_next_line.c
+SRC := ft_memset.c
+SRC += ft_memcpy.c
+SRC += ft_memccpy.c
+SRC += ft_memmove.c
+SRC += ft_memchr.c
+SRC += ft_memcmp.c
+SRC += ft_strlen.c
+SRC += ft_isalpha.c
+SRC += ft_isdigit.c
+SRC += ft_isalnum.c
+SRC += ft_isascii.c
+SRC += ft_isprint.c
+SRC += ft_toupper.c
+SRC += ft_tolower.c
+SRC += ft_strchr.c
+SRC += ft_strrchr.c
+SRC += ft_strncmp.c
+SRC += ft_strlcpy.c
+SRC += ft_strlcat.c
+SRC += ft_strnstr.c
+SRC += ft_atoi.c
+SRC += ft_calloc.c
+SRC += ft_strdup.c
+SRC += ft_substr.c
+SRC += ft_strjoin.c
+SRC += ft_strtrim.c
+SRC += ft_split.c
+SRC += ft_itoa.c
+SRC += ft_strnlen.c
+SRC += ft_strndup.c
+SRC += ft_strtoi.c
+SRC += ft_strcmp.c
+SRC += ft_strcspn.c
+SRC += ft_strspn.c
+SRC += ft_strstr.c
+SRC += ft_strrstr.c
+SRC += ft_strpbrk.c
+SRC += get_next_line.c
 
-OBJ					= $(addprefix $(DIR_OBJ)/, $(SRC:.c=.o))
-DEP					= $(OBJ:.o=.d))
+OBJ := $(SRC:%.c=$(DIR_OBJ)/%.o)
+DEP := $(OBJ:.o=.d)
 
-$(NAME):			$(OBJ)
-					$(AR) $(ARFLAGS) $@ $?
+$(NAME): $(OBJ)
+	$(AR) $(ARFLAGS) $@ $?
+
+$(OBJ): $(DIR_OBJ)/%.o:	$(DIR_SRC)/%.c
+	@$(MKDIR) $(@D)
+	$(CC) $(CFLAGS) $< -o $@
 
 -include $(DEP)
 
-$(DIR_OBJ)/%.o:		$(DIR_SRC)/%.c
-					@mkdir -p $(@D)
-					$(CC) $(CFLAGS) $< -o $@
+.PHONY: all clean fclean re
 
-all:				$(NAME)
+all: $(NAME)
 
 clean:
-					$(RM) $(OBJ)
+	@$(RM) -r $(DIR_OBJ)
 
-fclean:				clean
-					$(RM) $(NAME)
+fclean: clean
+	@$(RM) $(NAME)
 
-re:					fclean all
-
-.PHONY:				all clean fclean re
+re: fclean all
