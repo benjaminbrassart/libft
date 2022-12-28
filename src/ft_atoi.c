@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 12:36:03 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/04/05 22:37:46 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 09:39:53 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,5 @@
 
 int	ft_atoi(char const *s)
 {
-	int	i;
-	int	sign;
-
-	i = 0;
-	sign = 1;
-	while (*s == ' ' || (*s >= '\t' && *s <= '\r'))
-		++s;
-	if (*s == '-' || *s == '+')
-		if (*s++ == '-')
-			sign = -1;
-	while (ft_isdigit(*s))
-		i = i * 10 + *s++ - '0';
-	return (i * sign);
+	return ft_strtoi(s, NULL);
 }

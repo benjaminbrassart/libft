@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 22:56:13 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/04/05 22:56:23 by bbrassar         ###   ########.fr       */
+/*   Updated: 2022/12/28 09:39:56 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_strtoi(char const *s, char **endptr)
 			sign = -1;
 	while (ft_isdigit(*s))
 		result = result * 10 + *s++ - '0';
-	if (endptr)
+	if (endptr != NULL)
 		*endptr = (char *)s;
 	return (result * sign);
 }
