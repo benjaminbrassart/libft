@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/12/28 11:39:59 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/09 10:30:29 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define BUFFER_SIZE 4096
 
+# include <stdarg.h>
 # include <stddef.h>
 
 void
@@ -144,5 +145,17 @@ char
 
 int
 get_next_line(int fd, char **line);
+
+int
+ft_printf(char const *fmt, ...);
+
+int
+ft_dprintf(int fd, char const *fmt, ...);
+
+int
+ft_vprintf(char const *fmt, va_list ap);
+
+int
+ft_vdprintf(int fd, char const *fmt, va_list ap);
 
 #endif
