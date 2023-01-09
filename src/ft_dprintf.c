@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:53:29 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/09 10:30:01 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/09 12:09:18 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ int	ft_vdprintf(int fd, char const *fmt, va_list ap)
 }
 
 static t_conversion const	g_conversions[256] = {
-	['s'] = __print_string,
-	['d'] = __print_int,
-	['i'] = __print_int,
-	['c'] = __print_char,
+['s'] = __print_string,
+['d'] = __print_int,
+['i'] = __print_int,
+['c'] = __print_char,
 };
 
 static int	__print_conversion(int fd, char const *fmt, va_list ap)
