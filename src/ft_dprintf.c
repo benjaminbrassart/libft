@@ -6,12 +6,13 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:53:29 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/09 12:09:18 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 05:59:49 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 #include "private/ft_printf.h"
+#include "private/conversions.h"
 #include <unistd.h>
 
 static int
@@ -48,13 +49,6 @@ int	ft_vdprintf(int fd, char const *fmt, va_list ap)
 	}
 	return (res);
 }
-
-static t_conversion const	g_conversions[256] = {
-['s'] = __print_string,
-['d'] = __print_int,
-['i'] = __print_int,
-['c'] = __print_char,
-};
 
 static int	__print_conversion(int fd, char const *fmt, va_list ap)
 {
