@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:01:25 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 06:59:46 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 07:04:30 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <sys/types.h>
 
 typedef struct s_printerface	t_printerface;
-typedef int	(*t_conversion)(t_printerface *, va_list);
+typedef int						(*t_conversion)(t_printerface *, va_list);
 
 // TODO add HEAP_BUFFER for asprintf
 enum e_printf_type

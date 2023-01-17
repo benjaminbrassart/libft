@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 05:52:24 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:00:27 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 07:04:50 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "private/ft_printf.h"
 #include <unistd.h>
 
-static char const g_base[] = "0123456789";
+static char const	g_base[] = "0123456789";
 
 int	__print_uint(t_printerface *pi, va_list ap)
 {

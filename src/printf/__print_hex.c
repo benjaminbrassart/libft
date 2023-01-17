@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 06:18:09 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 06:59:13 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 07:04:03 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	__print_hex_low(t_printerface *pi, va_list ap)
 {
 	unsigned int const	n = va_arg(ap, unsigned int);
 
-	return __print_hex(pi, n, g_base_low);
+	return (__print_hex(pi, n, g_base_low));
 }
 
 int	__print_hex_up(t_printerface *pi, va_list ap)
 {
 	unsigned int const	n = va_arg(ap, unsigned int);
 
-	return __print_hex(pi, n, g_base_up);
+	return (__print_hex(pi, n, g_base_up));
 }
 
 static int	__print_hex(t_printerface *pi, unsigned int n, char const *base)

@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:53:29 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 06:57:33 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 07:04:39 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	ft_dprintf(int fd, char const *fmt, ...)
 int	ft_vdprintf(int fd, char const *fmt, va_list ap)
 {
 	struct s_printerface	printerface;
-	int	res;
-	int	tmp;
+	int						res;
+	int						tmp;
 
 	printerface.iface.fd = fd;
 	printerface.type = PF_FILE_DESCRIPTOR;
