@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:53:29 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 05:59:49 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 06:57:33 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 
 static int
-__print_conversion(int fd, char const *fmt, va_list ap);
+__print_conversion(t_printerface *pi, char const *fmt, va_list ap);
 
 int	ft_dprintf(int fd, char const *fmt, ...)
 {
@@ -31,14 +31,17 @@ int	ft_dprintf(int fd, char const *fmt, ...)
 
 int	ft_vdprintf(int fd, char const *fmt, va_list ap)
 {
+	struct s_printerface	printerface;
 	int	res;
 	int	tmp;
 
+	printerface.iface.fd = fd;
+	printerface.type = PF_FILE_DESCRIPTOR;
 	res = 0;
 	while (res >= 0 && *fmt != '\0')
 	{
 		if (*fmt == '%')
-			tmp = __print_conversion(fd, ++fmt, ap);
+			tmp = __print_conversion(&printerface, ++fmt, ap);
 		else
 			tmp = write(fd, fmt, 1);
 		++fmt;
@@ -50,11 +53,11 @@ int	ft_vdprintf(int fd, char const *fmt, va_list ap)
 	return (res);
 }
 
-static int	__print_conversion(int fd, char const *fmt, va_list ap)
+static int	__print_conversion(t_printerface *pi, char const *fmt, va_list ap)
 {
 	t_conversion const	*conversion = &g_conversions[(unsigned char)*fmt];
 
 	if (*conversion == NULL)
-		return (write(fd, fmt, 1));
-	return ((*conversion)(fd, ap));
+		return (__printerface_write(pi, fmt, 1));
+	return ((*conversion)(pi, ap));
 }

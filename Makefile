@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2023/01/17 06:22:07 by bbrassar         ###   ########.fr        #
+#    Updated: 2023/01/17 07:01:15 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,7 @@ SRC += printf/__print_uint.c
 SRC += printf/__print_string.c
 SRC += printf/__print_hex.c
 SRC += printf/__uitoa_base_s.c
+SRC += printf/__printerface_write.c
 
 OBJ := $(SRC:%.c=$(DIR_OBJ)/%.o)
 DEP := $(OBJ:.o=.d)
@@ -109,3 +110,6 @@ fclean: clean
 	@$(RM) $(NAME)
 
 re: fclean all
+
+test: test.c $(NAME)
+	$(CC) -Wall -Werror -Wextra $< -o $@ -lft -L.

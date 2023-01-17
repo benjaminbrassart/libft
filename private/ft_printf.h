@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:01:25 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 06:19:43 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 06:59:46 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,61 @@
 
 # include <stdarg.h>
 # include <stddef.h>
+# include <sys/types.h>
 
-typedef int	(*t_conversion)(int, va_list);
+typedef struct s_printerface	t_printerface;
+typedef int	(*t_conversion)(t_printerface *, va_list);
+
+// TODO add HEAP_BUFFER for asprintf
+enum e_printf_type
+{
+	PF_FILE_DESCRIPTOR,
+	PF_STACK_BUFFER,
+};
+
+struct s_printf_buffer
+{
+	char	*buffer;
+	ssize_t	max_size;
+};
+
+union u_printerface
+{
+	int						fd;
+	struct s_printf_buffer	buffer;
+};
+
+struct s_printerface
+{
+	enum e_printf_type	type;
+	union u_printerface	iface;
+};
 
 int
-__print_string(int fd, va_list ap);
+__print_string(t_printerface *pi, va_list ap);
 
 int
-__print_int(int fd, va_list ap);
+__print_int(t_printerface *pi, va_list ap);
 
 int
-__print_char(int fd, va_list ap);
+__print_char(t_printerface *pi, va_list ap);
 
 int
-__print_uint(int fd, va_list ap);
+__print_uint(t_printerface *pi, va_list ap);
 
 int
-__print_hex_low(int fd, va_list ap);
+__print_hex_low(t_printerface *pi, va_list ap);
 
 int
-__print_hex_up(int fd, va_list ap);
+__print_hex_up(t_printerface *pi, va_list ap);
 
 size_t
 __uitoa_base_s(
 	unsigned long long n, char *buffer,
 	size_t buffer_size, char const *base)
 __attribute__((nonnull(2, 4)));
+
+int
+__printerface_write(t_printerface *interface, char const *data, size_t len);
 
 #endif // FT_PRINTF_H
