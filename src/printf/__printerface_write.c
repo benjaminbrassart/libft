@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 06:28:20 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:02:46 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 07:20:03 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@ int	__printerface_write(t_printerface *interface, char const *data, size_t len)
 	return (-1);
 }
 
-// TODO implement for s*printf
 int	__print_buffer(struct s_printf_buffer *buffer, char const *data, size_t len)
 {
-	(void)buffer;
-	(void)data;
-	(void)len;
-	return (0);
+	size_t const	old_size = buffer->current_size;
+
+	while (len-- > 0 && buffer->max_size > buffer->current_size)
+		buffer->buffer[buffer->current_size++] = *data++;
+	if (buffer->current_size < buffer->max_size)
+		buffer->buffer[buffer->current_size] = '\0';
+	return (buffer->current_size - old_size);
 }

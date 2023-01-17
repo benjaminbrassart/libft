@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:01:25 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:04:30 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 07:26:02 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdarg.h>
 # include <stddef.h>
-# include <sys/types.h>
 
 typedef struct s_printerface	t_printerface;
 typedef int						(*t_conversion)(t_printerface *, va_list);
@@ -30,7 +29,8 @@ enum e_printf_type
 struct s_printf_buffer
 {
 	char	*buffer;
-	ssize_t	max_size;
+	size_t	max_size;
+	size_t	current_size;
 };
 
 union u_printerface
@@ -44,6 +44,9 @@ struct s_printerface
 	enum e_printf_type	type;
 	union u_printerface	iface;
 };
+
+int
+ft_printf_core(t_printerface *pi, char const *fmt, va_list ap);
 
 int
 __print_string(t_printerface *pi, va_list ap);

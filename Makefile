@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2023/01/17 07:01:15 by bbrassar         ###   ########.fr        #
+#    Updated: 2023/01/17 07:27:22 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,8 @@ SRC += get_next_line.c
 # ft_printf
 SRC += ft_printf.c
 SRC += ft_dprintf.c
+SRC += ft_sprintf.c
+SRC += ft_snprintf.c
 SRC += printf/__print_char.c
 SRC += printf/__print_int.c
 SRC += printf/__print_uint.c
@@ -86,6 +88,7 @@ SRC += printf/__print_string.c
 SRC += printf/__print_hex.c
 SRC += printf/__uitoa_base_s.c
 SRC += printf/__printerface_write.c
+SRC += printf/ft_printf_core.c
 
 OBJ := $(SRC:%.c=$(DIR_OBJ)/%.o)
 DEP := $(OBJ:.o=.d)

@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/09 10:30:29 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 07:15:17 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,9 +153,21 @@ int
 ft_dprintf(int fd, char const *fmt, ...);
 
 int
+ft_sprintf(char *buffer, char const *fmt, ...);
+
+int
+ft_snprintf(char *buffer, size_t size, char const *fmt, ...);
+
+int
 ft_vprintf(char const *fmt, va_list ap);
 
 int
 ft_vdprintf(int fd, char const *fmt, va_list ap);
+
+int
+ft_vsprintf(char *buffer, char const *fmt, va_list ap);
+
+int
+ft_vsnprintf(char *buffer, size_t size, char const *fmt, va_list ap);
 
 #endif
