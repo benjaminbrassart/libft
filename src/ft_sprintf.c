@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 07:26:23 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:27:34 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 07:47:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include "private/ft_printf.h"
 #include <limits.h>
 
-int
-ft_sprintf(char *buffer, char const *fmt, ...)
+int	ft_sprintf(char *buffer, char const *fmt, ...)
 {
 	va_list	ap;
 	int		res;
@@ -26,8 +25,7 @@ ft_sprintf(char *buffer, char const *fmt, ...)
 	return (res);
 }
 
-int
-ft_vsprintf(char *buffer, char const *fmt, va_list ap)
+int	ft_vsprintf(char *buffer, char const *fmt, va_list ap)
 {
 	struct s_printerface	pi;
 

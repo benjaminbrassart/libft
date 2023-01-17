@@ -6,15 +6,14 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 07:13:09 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:27:04 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 07:47:46 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft.h"
 #include "private/ft_printf.h"
 
-int
-ft_snprintf(char *buffer, size_t size, char const *fmt, ...)
+int	ft_snprintf(char *buffer, size_t size, char const *fmt, ...)
 {
 	va_list	ap;
 	int		res;
@@ -25,8 +24,7 @@ ft_snprintf(char *buffer, size_t size, char const *fmt, ...)
 	return (res);
 }
 
-int
-ft_vsnprintf(char *buffer, size_t size, char const *fmt, va_list ap)
+int	ft_vsnprintf(char *buffer, size_t size, char const *fmt, va_list ap)
 {
 	struct s_printerface	pi;
 
