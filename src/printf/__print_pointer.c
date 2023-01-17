@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   __print_int.c                                      :+:      :+:    :+:   */
+/*   __print_pointer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 10:08:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 08:36:34 by bbrassar         ###   ########.fr       */
+/*   Created: 2023/01/17 07:52:44 by bbrassar          #+#    #+#             */
+/*   Updated: 2023/01/17 07:55:09 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
-#include "private/cast.h"
 #include "private/ft_printf.h"
-#include <unistd.h>
 
-int	__print_int(t_printerface *pi, t_opt *opt, va_list ap)
+int	__print_pointer(t_printerface *pi, va_list ap)
 {
-	char			buffer[20];
-	size_t			len;
-	long long const	n = __cast_signed(opt->length, va_arg(ap, long long));
+	int	res[2];
 
-	len = __itoa_base_s(n, buffer, sizeof (buffer), "0123456789");
-	return (__printerface_write(pi, buffer, len));
+	res[0] = __printerface_write(pi, "0x", 2);
+	if (res[0] == -1)
+		return (-1);
+	res[1] = __print_hex_low(pi, ap);
+	if (res[1] == -1)
+		return (-1);
+	return (res[0] + res[1]);
 }

@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   __print_int.c                                      :+:      :+:    :+:   */
+/*   cast.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 10:08:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 08:36:34 by bbrassar         ###   ########.fr       */
+/*   Created: 2023/01/17 07:59:50 by bbrassar          #+#    #+#             */
+/*   Updated: 2023/01/17 08:01:05 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
-#include "private/cast.h"
-#include "private/ft_printf.h"
-#include <unistd.h>
+#ifndef CAST_H
+# define CAST_H
 
-int	__print_int(t_printerface *pi, t_opt *opt, va_list ap)
-{
-	char			buffer[20];
-	size_t			len;
-	long long const	n = __cast_signed(opt->length, va_arg(ap, long long));
+# include "private/options.h"
 
-	len = __itoa_base_s(n, buffer, sizeof (buffer), "0123456789");
-	return (__printerface_write(pi, buffer, len));
-}
+unsigned long long
+__cast_unsigned(enum e_lengthmod length, unsigned long long n);
+
+long long
+__cast_signed(enum e_lengthmod length, long long n);
+
+#endif // CAST_H

@@ -6,15 +6,16 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 07:16:54 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:18:55 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/01/17 08:39:45 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "private/conversions.h"
 #include "private/ft_printf.h"
+#include "private/options.h"
 
 static int
-__print_conversion(t_printerface *pi, char const *fmt, va_list ap);
+__print_conversion(t_printerface *pi, char const **fmt, va_list ap);
 
 int	ft_printf_core(t_printerface *pi, char const *fmt, va_list ap)
 {
@@ -25,7 +26,10 @@ int	ft_printf_core(t_printerface *pi, char const *fmt, va_list ap)
 	while (res >= 0 && *fmt != '\0')
 	{
 		if (*fmt == '%')
-			tmp = __print_conversion(pi, ++fmt, ap);
+		{
+			++fmt;
+			tmp = __print_conversion(pi, &fmt, ap);
+		}
 		else
 			tmp = __printerface_write(pi, fmt, 1);
 		++fmt;
@@ -37,11 +41,14 @@ int	ft_printf_core(t_printerface *pi, char const *fmt, va_list ap)
 	return (res);
 }
 
-static int	__print_conversion(t_printerface *pi, char const *fmt, va_list ap)
+static int	__print_conversion(t_printerface *pi, char const **fmt, va_list ap)
 {
-	t_conversion const	*conversion = &g_conversions[(unsigned char)*fmt];
+	t_conversion const	*conversion;
+	t_opt				opt;
 
+	__parse_options(&opt, fmt);
+	conversion = &g_conversions[(unsigned char)**fmt];
 	if (*conversion == NULL)
-		return (__printerface_write(pi, fmt, 1));
-	return ((*conversion)(pi, ap));
+		return (__printerface_write(pi, *fmt, 1));
+	return ((*conversion)(pi, &opt, ap));
 }

@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   __print_int.c                                      :+:      :+:    :+:   */
+/*   __cast_unsigned.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/09 10:08:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 08:36:34 by bbrassar         ###   ########.fr       */
+/*   Created: 2023/01/17 08:01:24 by bbrassar          #+#    #+#             */
+/*   Updated: 2023/01/17 08:05:23 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
 #include "private/cast.h"
-#include "private/ft_printf.h"
-#include <unistd.h>
 
-int	__print_int(t_printerface *pi, t_opt *opt, va_list ap)
+unsigned long long	__cast_unsigned(enum e_lengthmod length,
+		unsigned long long n)
 {
-	char			buffer[20];
-	size_t			len;
-	long long const	n = __cast_signed(opt->length, va_arg(ap, long long));
-
-	len = __itoa_base_s(n, buffer, sizeof (buffer), "0123456789");
-	return (__printerface_write(pi, buffer, len));
+	if (length == LEN_SHORT_SHORT)
+		return ((unsigned char)n);
+	if (length == LEN_SHORT)
+		return ((unsigned short)n);
+	if (length == LEN_NORMAL)
+		return ((unsigned int)n);
+	if (length == LEN_LONG)
+		return ((unsigned long)n);
+	return ((unsigned long long)n);
 }

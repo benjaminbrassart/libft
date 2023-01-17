@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2023/01/17 07:27:22 by bbrassar         ###   ########.fr        #
+#    Updated: 2023/01/17 08:40:01 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -86,8 +86,16 @@ SRC += printf/__print_int.c
 SRC += printf/__print_uint.c
 SRC += printf/__print_string.c
 SRC += printf/__print_hex.c
+SRC += printf/__itoa_base_s.c
 SRC += printf/__uitoa_base_s.c
 SRC += printf/__printerface_write.c
+SRC += printf/__parse_flags.c
+SRC += printf/__parse_width.c
+SRC += printf/__parse_precision.c
+SRC += printf/__parse_length.c
+SRC += printf/__parse_options.c
+SRC += printf/__cast_signed.c
+SRC += printf/__cast_unsigned.c
 SRC += printf/ft_printf_core.c
 
 OBJ := $(SRC:%.c=$(DIR_OBJ)/%.o)
