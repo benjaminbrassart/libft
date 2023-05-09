@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:01:25 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 08:34:20 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/09 20:42:49 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,8 @@ __attribute__((nonnull(2, 4)));
 
 int
 __printerface_write(t_printerface *interface, char const *data, size_t len);
+
+int
+__checked_add(int *base, int add);
 
 #endif // FT_PRINTF_H
