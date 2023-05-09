@@ -1,0 +1,15 @@
+name: norminette
+on:
+  - push
+jobs:
+  norminette:
+    name: Run norminette
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.7'
+          cache: pip
+      - run: pip install norminette
+      - run: norminette
