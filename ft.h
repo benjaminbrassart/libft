@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:15:17 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/09 18:48:25 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,12 @@ char
 
 char
 *ft_strpbrk(char const *s, char const *accept);
+
+int
+ft_strcasecmp(char const *s1, char const *s2);
+
+int
+ft_strncasecmp(char const *s1, char const *s2, size_t n);
 
 int
 get_next_line(int fd, char **line);
