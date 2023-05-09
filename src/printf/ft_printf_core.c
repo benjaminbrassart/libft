@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 07:16:54 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/05/09 19:30:45 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/09 23:14:58 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ __print_conversion(t_printerface *pi, char const **fmt, va_list ap);
 int	ft_printf_core(t_printerface *pi, char const *fmt, va_list ap)
 {
 	int	res;
-	int	tmp;
 
 	res = 0;
 	while (res >= 0 && *fmt != '\0')
@@ -38,15 +37,11 @@ int	ft_printf_core(t_printerface *pi, char const *fmt, va_list ap)
 		if (*fmt == '%')
 		{
 			++fmt;
-			tmp = __print_conversion(pi, &fmt, ap);
+			__checked_add(&res, __print_conversion(pi, &fmt, ap));
 		}
 		else
-			tmp = __printerface_write(pi, fmt, 1);
+			__checked_add(&res, __printerface_write(pi, fmt, 1));
 		++fmt;
-		if (tmp < 0)
-			res = -1;
-		else
-			res += tmp;
 	}
 	return (res);
 }
