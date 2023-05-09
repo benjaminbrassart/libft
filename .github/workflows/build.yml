@@ -1,0 +1,10 @@
+name: build
+on:
+  - push
+jobs:
+  build:
+    name: Build using Makefile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: make -j
