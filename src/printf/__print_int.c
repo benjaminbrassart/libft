@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:08:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/05/09 23:14:53 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/09 23:19:56 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	__zero(t_printerface *pi, t_opt *opt,
 			if (__checked_add(&r, __printerface_write(pi, "0", 1)) >= 0)
 				++len;
 	}
-	return __checked_add(&r, __min_width(pi, opt, buf, len));
+	return (__checked_add(&r, __min_width(pi, opt, buf, len)));
 }
 
 // TODO implement me!
