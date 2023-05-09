@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 08:19:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 10:15:04 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:46:50 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	__parse_precision(t_opt *opt, char const **fmt)
 	size_t		precision;
 
 	if (*s != '.')
-		return;
+		return ;
 	++s;
 	precision = 0;
 	while (ft_isdigit(*s))

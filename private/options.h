@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 07:58:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/25 06:08:45 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:47:13 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # define OPT_HASHTAG 0x4
 # define OPT_ZERO 0x8
 # define OPT_DASH 0x10
-# define OPT_SPACE OPT_SPACE 0x20
-# define OPT_PLUS OPT_PLUS 0x40
-# define OPT_QUOTE OPT_QUOTE 0x80
+# define OPT_SPACE 0x20
+# define OPT_PLUS 0x40
+# define OPT_QUOTE 0x80
 
 enum e_lengthmod
 {

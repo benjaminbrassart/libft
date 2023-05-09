@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 06:18:09 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 08:39:28 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:47:31 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char const	g_base_up[] = "0123456789ABCDEF";
 
 static int
 __print_hex(t_printerface *pi, t_opt *opt,
-		unsigned long long n, char const *base);
+	unsigned long long n, char const *base);
 
 int	__print_hex_low(t_printerface *pi, t_opt *opt, va_list ap)
 {
