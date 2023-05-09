@@ -6,13 +6,23 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 07:16:54 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 08:39:45 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/09 19:30:45 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "private/conversions.h"
 #include "private/ft_printf.h"
 #include "private/options.h"
+
+static t_conversion const	g_conversions[256] = {
+['s'] = __print_string,
+['d'] = __print_int,
+['i'] = __print_int,
+['c'] = __print_char,
+['u'] = __print_uint,
+['x'] = __print_hex_low,
+['X'] = __print_hex_up,
+};
 
 static int
 __print_conversion(t_printerface *pi, char const **fmt, va_list ap);
@@ -46,7 +56,7 @@ static int	__print_conversion(t_printerface *pi, char const **fmt, va_list ap)
 	t_conversion const	*conversion;
 	t_opt				opt;
 
-	__parse_options(&opt, fmt);
+	__parse_options(&opt, ap, fmt);
 	conversion = &g_conversions[(unsigned char)**fmt];
 	if (*conversion == NULL)
 		return (__printerface_write(pi, *fmt, 1));
