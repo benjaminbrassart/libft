@@ -6,16 +6,14 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 06:18:09 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/05/09 16:47:31 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/09 19:34:31 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "private/cast.h"
+#include "private/conversions.h"
 #include "private/ft_printf.h"
 #include <unistd.h>
-
-static char const	g_base_low[] = "0123456789abcdef";
-static char const	g_base_up[] = "0123456789ABCDEF";
 
 static int
 __print_hex(t_printerface *pi, t_opt *opt,
@@ -25,14 +23,16 @@ int	__print_hex_low(t_printerface *pi, t_opt *opt, va_list ap)
 {
 	unsigned long long const	n = va_arg(ap, unsigned long long);
 
-	return (__print_hex(pi, opt, __cast_unsigned(opt->length, n), g_base_low));
+	return (__print_hex(pi, opt, __cast_unsigned(opt->length, n),
+			g_base_hex_low));
 }
 
 int	__print_hex_up(t_printerface *pi, t_opt *opt, va_list ap)
 {
 	unsigned long long const	n = va_arg(ap, unsigned long long);
 
-	return (__print_hex(pi, opt, __cast_unsigned(opt->length, n), g_base_up));
+	return (__print_hex(pi, opt, __cast_unsigned(opt->length, n),
+			g_base_hex_up));
 }
 
 static int	__print_hex(t_printerface *pi, t_opt *opt,
