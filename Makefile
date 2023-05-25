@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2023/05/25 07:55:28 by bbrassar         ###   ########.fr        #
+#    Updated: 2023/05/25 08:12:24 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ SRC += ft_strspn.c
 SRC += ft_strstr.c
 SRC += ft_strrstr.c
 SRC += ft_strpbrk.c
+SRC += ft_bswap.c
 
 # get_next_line
 SRC += get_next_line.c
