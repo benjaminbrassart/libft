@@ -6,11 +6,11 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 22:57:36 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/12/28 09:42:50 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/25 07:57:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft/ft.h"
 
 int	ft_strcmp(char const *s1, char const *s2)
 {

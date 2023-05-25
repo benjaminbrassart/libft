@@ -6,12 +6,12 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 06:01:17 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 06:16:37 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/25 07:57:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
-#include "private/ft_printf.h"
+#include "libft/ft.h"
+#include "libft/private/ft_printf.h"
 
 size_t	__uitoa_base_s(
 	unsigned long long n,

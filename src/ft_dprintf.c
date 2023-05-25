@@ -6,13 +6,13 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 09:53:29 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:23:54 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/25 07:57:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
-#include "private/ft_printf.h"
-#include "private/conversions.h"
+#include "libft/ft.h"
+#include "libft/private/ft_printf.h"
+#include "libft/private/conversions.h"
 #include <unistd.h>
 
 int	ft_dprintf(int fd, char const *fmt, ...)
