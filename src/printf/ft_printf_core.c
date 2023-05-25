@@ -6,12 +6,12 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 07:16:54 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:18:55 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/25 07:57:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "private/conversions.h"
-#include "private/ft_printf.h"
+#include "libft/private/conversions.h"
+#include "libft/private/ft_printf.h"
 
 static int
 __print_conversion(t_printerface *pi, char const *fmt, va_list ap);

@@ -6,11 +6,11 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 15:40:12 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/12/28 09:41:07 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/25 07:57:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft/ft.h"
 
 int	ft_memcmp(void const *s1, void const *s2, size_t n)
 {

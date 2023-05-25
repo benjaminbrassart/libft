@@ -6,11 +6,11 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/25 11:46:01 by bbrassar          #+#    #+#             */
-/*   Updated: 2022/12/28 09:47:25 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/25 07:57:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
+#include "libft/ft.h"
 
 size_t	ft_strlcat(char *dst, char const *src, size_t dstsize)
 {

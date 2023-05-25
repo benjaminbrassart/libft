@@ -6,12 +6,12 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:08:58 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:00:06 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/05/25 07:57:41 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft.h"
-#include "private/ft_printf.h"
+#include "libft/ft.h"
+#include "libft/private/ft_printf.h"
 #include <unistd.h>
 
 int	__print_int(t_printerface *pi, va_list ap)

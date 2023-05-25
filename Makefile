@@ -6,7 +6,7 @@
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2023/01/17 07:27:22 by bbrassar         ###   ########.fr        #
+#    Updated: 2023/05/25 07:55:28 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS += -Wextra
 CFLAGS += -Werror
 CFLAGS += -c
 CFLAGS += -MMD -MP
-CFLAGS += -I.
+CFLAGS += -Iinclude
 CFLAGS += -Iprivate
 
 AR := ar
