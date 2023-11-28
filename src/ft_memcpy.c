@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 15:31:32 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/11/28 10:25:19 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:20:23 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <stdint.h>
 
+__attribute__((always_inline))
 inline static void	_memcpy64(void **dst, void const **src, size_t *len)
 {
 	uint64_t const	*s;
@@ -30,6 +31,7 @@ inline static void	_memcpy64(void **dst, void const **src, size_t *len)
 	*src = s;
 }
 
+__attribute__((always_inline))
 inline static void	_memcpy32(void **dst, void const **src, size_t *len)
 {
 	uint32_t const	*s;
@@ -46,6 +48,7 @@ inline static void	_memcpy32(void **dst, void const **src, size_t *len)
 	*src = s;
 }
 
+__attribute__((always_inline))
 inline static void	_memcpy16(void **dst, void const **src, size_t *len)
 {
 	uint16_t const	*s;
@@ -62,6 +65,7 @@ inline static void	_memcpy16(void **dst, void const **src, size_t *len)
 	*src = s;
 }
 
+__attribute__((always_inline))
 inline static void	_memcpy8(void **dst, void const **src, size_t *len)
 {
 	uint8_t const	*s;
@@ -82,6 +86,8 @@ void	*ft_memcpy(void *dst, void const *src, size_t len)
 {
 	void	*d;
 
+	if (len == 0 || dst == src)
+		return (dst);
 	d = dst;
 	_memcpy64(&dst, &src, &len);
 	_memcpy32(&dst, &src, &len);
