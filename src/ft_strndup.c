@@ -6,7 +6,7 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 22:48:11 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/05/25 07:57:41 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:48:34 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strndup(char const *s, size_t maxlen)
 	buf = malloc((len + 1) * sizeof (*s));
 	if (buf != NULL)
 	{
-		ft_memmove(buf, s, len * sizeof (*s));
+		ft_memcpy(buf, s, len * sizeof (*s));
 		buf[len * sizeof (*s)] = 0;
 	}
 	return (buf);
