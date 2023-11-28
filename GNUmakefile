@@ -1,28 +1,31 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    GNUmakefile                                        :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/20 12:54:24 by bbrassar          #+#    #+#              #
-#    Updated: 2023/05/25 08:12:24 by bbrassar         ###   ########.fr        #
+#    Updated: 2023/11/28 11:29:01 by bbrassar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+MAKEFILE := $(lastword $(MAKEFILE_LIST))
 NAME := libft.a
+NAME_DYN := libft.so
 
 CC := cc
 CFLAGS := -Wall
 CFLAGS += -Wextra
 CFLAGS += -Werror
 CFLAGS += -c
+CFLAGS += -fPIC
 CFLAGS += -MMD -MP
 CFLAGS += -Iinclude
 CFLAGS += -Iprivate
 
 AR := ar
-ARFLAGS := rs
+ARFLAGS := rvs
 
 RM := rm -vf
 MKDIR := mkdir -vp
@@ -97,7 +100,10 @@ DEP := $(OBJ:.o=.d)
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $@ $?
 
-$(OBJ): $(DIR_OBJ)/%.o:	$(DIR_SRC)/%.c
+$(NAME_DYN): $(OBJ)
+	$(CC) -shared $^ -o $@
+
+$(OBJ): $(DIR_OBJ)/%.o:	$(DIR_SRC)/%.c $(MAKEFILE)
 	@$(MKDIR) $(@D)
 	$(CC) $(CFLAGS) $< -o $@
 
@@ -105,15 +111,17 @@ $(OBJ): $(DIR_OBJ)/%.o:	$(DIR_SRC)/%.c
 
 .PHONY: all clean fclean re
 
-all: $(NAME)
+all: $(NAME) $(NAME_DYN)
 
 clean:
-	@$(RM) -r $(DIR_OBJ)
+	@$(RM) $(OBJ) $(DEP)
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) $(NAME_DYN)
 
-re: fclean all
+re: fclean
+	@$(MAKE) -f $(MAKEFILE) all
 
-test: test.c $(NAME)
-	$(CC) -Wall -Werror -Wextra $< -o $@ -lft -L.
+.PHONY: so
+
+so: $(NAME_DYN)

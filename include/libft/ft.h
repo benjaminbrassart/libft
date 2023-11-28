@@ -6,14 +6,16 @@
 /*   By: bbrassar <bbrassar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/22 09:37:02 by bbrassar          #+#    #+#             */
-/*   Updated: 2023/01/17 07:15:17 by bbrassar         ###   ########.fr       */
+/*   Updated: 2023/11/28 12:46:09 by bbrassar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_H
 # define FT_H
 
-# define BUFFER_SIZE 4096
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4096
+# endif
 
 # include <stdarg.h>
 # include <stddef.h>
