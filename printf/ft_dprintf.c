@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft/ft.h"
-#include "libft/private/ft_printf.h"
-#include "libft/private/conversions.h"
 #include <unistd.h>
 
 int	ft_dprintf(int fd, char const *fmt, ...)
@@ -28,9 +26,4 @@ int	ft_dprintf(int fd, char const *fmt, ...)
 
 int	ft_vdprintf(int fd, char const *fmt, va_list ap)
 {
-	struct s_printerface	pi;
-
-	pi.iface.fd = fd;
-	pi.type = PF_FILE_DESCRIPTOR;
-	return (ft_printf_core(&pi, fmt, ap));
 }

@@ -63,13 +63,6 @@ SRC += printf/ft_dprintf.c
 SRC += printf/ft_sprintf.c
 SRC += printf/ft_snprintf.c
 SRC += printf/ft_asprintf.c
-SRC += printf/__print_char.c
-SRC += printf/__print_int.c
-SRC += printf/__print_uint.c
-SRC += printf/__print_string.c
-SRC += printf/__print_hex.c
-SRC += printf/__uitoa_base_s.c
-SRC += printf/__printerface_write.c
 SRC += printf/ft_printf_core.c
 
 OBJ := $(SRC:.c=.o)

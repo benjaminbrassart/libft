@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft/ft.h"
-#include "libft/private/ft_printf.h"
 #include <limits.h>
 
 int	ft_sprintf(char *buffer, char const *fmt, ...)
@@ -27,11 +26,4 @@ int	ft_sprintf(char *buffer, char const *fmt, ...)
 
 int	ft_vsprintf(char *buffer, char const *fmt, va_list ap)
 {
-	struct s_printerface	pi;
-
-	pi.iface.buffer.buffer = buffer;
-	pi.iface.buffer.current_size = 0;
-	pi.iface.buffer.max_size = ULLONG_MAX;
-	pi.type = PF_STACK_BUFFER;
-	return (ft_printf_core(&pi, fmt, ap));
 }

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft/ft.h"
-#include "libft/private/ft_printf.h"
 
 int	ft_snprintf(char *buffer, size_t size, char const *fmt, ...)
 {
@@ -26,11 +25,4 @@ int	ft_snprintf(char *buffer, size_t size, char const *fmt, ...)
 
 int	ft_vsnprintf(char *buffer, size_t size, char const *fmt, va_list ap)
 {
-	struct s_printerface	pi;
-
-	pi.iface.buffer.buffer = buffer;
-	pi.iface.buffer.current_size = 0;
-	pi.iface.buffer.max_size = size;
-	pi.type = PF_STACK_BUFFER;
-	return (ft_printf_core(&pi, fmt, ap));
 }
