@@ -77,7 +77,7 @@ $(NAME_DYN): $(OBJ)
 
 $(OBJ): .EXTRA_PREREQS = $(MAKEFILE)
 $(OBJ): %.o: %.c
-	$(CC) -Wall -Wextra -Werror -c -fPIC -MMD -MP -Iinclude -Iprivate $(CFLAGS) $< -o $@
+	$(CC) -Wall -Wextra -Werror -c -fPIC -MMD -MP -Iinclude $(CFLAGS) $< -o $@
 
 -include $(DEP)
 
