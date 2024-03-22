@@ -14,29 +14,6 @@ MAKEFILE := $(lastword $(MAKEFILE_LIST))
 NAME := libft.a
 NAME_DYN := libft.so
 
-CC := cc
-CFLAGS := -Wall
-CFLAGS += -Wextra
-CFLAGS += -Werror
-CFLAGS += -c
-CFLAGS += -fPIC
-CFLAGS += -MMD -MP
-CFLAGS += -Iinclude
-CFLAGS += -Iprivate
-
-AR := ar
-ARFLAGS := rvs
-
-RM := rm -vf
-MKDIR := mkdir -vp
-
-ifeq ($(DEBUG), true)
-CFLAGS += -g3
-endif
-
-DIR_SRC := src
-DIR_OBJ := obj
-
 SRC := ft_memset.c
 SRC += ft_memcpy.c
 SRC += ft_memccpy.c
@@ -85,6 +62,7 @@ SRC += ft_printf.c
 SRC += ft_dprintf.c
 SRC += ft_sprintf.c
 SRC += ft_snprintf.c
+SRC += ft_asprintf.c
 SRC += printf/__print_char.c
 SRC += printf/__print_int.c
 SRC += printf/__print_uint.c
@@ -94,18 +72,19 @@ SRC += printf/__uitoa_base_s.c
 SRC += printf/__printerface_write.c
 SRC += printf/ft_printf_core.c
 
-OBJ := $(SRC:%.c=$(DIR_OBJ)/%.o)
+OBJ := $(SRC:.c=.o)
 DEP := $(OBJ:.o=.d)
 
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $@ $?
+	ranlib $@
 
 $(NAME_DYN): $(OBJ)
 	$(CC) -shared $^ -o $@
 
-$(OBJ): $(DIR_OBJ)/%.o:	$(DIR_SRC)/%.c $(MAKEFILE)
-	@$(MKDIR) $(@D)
-	$(CC) $(CFLAGS) $< -o $@
+$(OBJ): .EXTRA_PREREQS = $(MAKEFILE)
+$(OBJ): %.o: %.c
+	$(CC) -Wall -Wextra -Werror -c -fPIC -MMD -MP -Iinclude -Iprivate $(CFLAGS) $< -o $@
 
 -include $(DEP)
 
