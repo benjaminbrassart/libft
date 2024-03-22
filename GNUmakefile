@@ -58,11 +58,11 @@ SRC += ft_bswap.c
 SRC += get_next_line.c
 
 # ft_printf
-SRC += ft_printf.c
-SRC += ft_dprintf.c
-SRC += ft_sprintf.c
-SRC += ft_snprintf.c
-SRC += ft_asprintf.c
+SRC += printf/ft_printf.c
+SRC += printf/ft_dprintf.c
+SRC += printf/ft_sprintf.c
+SRC += printf/ft_snprintf.c
+SRC += printf/ft_asprintf.c
 SRC += printf/__print_char.c
 SRC += printf/__print_int.c
 SRC += printf/__print_uint.c
